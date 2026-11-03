@@ -1,0 +1,1 @@
+Cha & Chi GitHub connector write test successful.
