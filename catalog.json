@@ -1,0 +1,79 @@
+{
+  "currency": "CAD",
+  "shipping": {
+    "flat_rate_cad": 8,
+    "free_shipping_threshold_cad": 60
+  },
+  "products": [
+    {
+      "id": "ember",
+      "name": "Ember",
+      "type": "Shou Pu-erh",
+      "origin": "Menghai / Bulang, Yunnan",
+      "weight_grams": 50,
+      "price_cad": 30,
+      "inventory_status": "unverified",
+      "stripe_payment_link": null
+    },
+    {
+      "id": "mist",
+      "name": "Mist",
+      "type": "Aged Shou Mei white tea",
+      "origin": "Pan Xi, Fujian",
+      "weight_grams": 50,
+      "price_cad": 30,
+      "inventory_status": "unverified",
+      "stripe_payment_link": null
+    },
+    {
+      "id": "stillpoint",
+      "name": "Stillpoint",
+      "type": "Ali Shan Qing Xin oolong",
+      "origin": "Ali Shan, Taiwan",
+      "weight_grams": 50,
+      "price_cad": 30,
+      "inventory_status": "unverified",
+      "stripe_payment_link": null
+    },
+    {
+      "id": "ground",
+      "name": "Ground",
+      "type": "Dianhong Jin Ya black tea",
+      "origin": "Fengqing, Yunnan",
+      "weight_grams": 50,
+      "price_cad": 30,
+      "inventory_status": "unverified",
+      "stripe_payment_link": null
+    },
+    {
+      "id": "vital",
+      "name": "Vital",
+      "type": "Mi Lan Xiang Dancong oolong",
+      "origin": "Wudong, Guangdong",
+      "weight_grams": 50,
+      "price_cad": 30,
+      "inventory_status": "unverified",
+      "stripe_payment_link": null
+    },
+    {
+      "id": "pivot",
+      "name": "Pivot",
+      "type": "Mengding Huangya yellow tea",
+      "origin": "Mengding, Sichuan",
+      "weight_grams": 50,
+      "price_cad": 30,
+      "inventory_status": "unverified",
+      "stripe_payment_link": null
+    },
+    {
+      "id": "jade",
+      "name": "Jade",
+      "type": "Shifeng Longjing green tea",
+      "origin": "Hangzhou, Zhejiang",
+      "weight_grams": 50,
+      "price_cad": 30,
+      "inventory_status": "unverified",
+      "stripe_payment_link": null
+    }
+  ]
+}
