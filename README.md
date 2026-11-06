@@ -28,3 +28,19 @@ The website is self-contained in `index.html`; `catalog.json` provides a machine
 ## Accuracy
 
 The quiz is based on flavor and ritual preferences, not medical diagnosis. Tea is not marketed as treatment for health conditions. Brewing instructions and sourcing claims require product-specific validation.
+
+## New additions
+- `brewing.html`: bilingual gongfu brewing reference for all seven teas, with suggested water temperatures, ratios, and short-steep times.
+- `favicon.svg` and `robots.txt`: branded browser icon and basic search-crawler instructions.
+- `success.html`: bilingual post-checkout landing page (not proof of payment).
+- `netlify/functions/checkout-status.js`: exposes only a boolean checkout-enabled status; no credentials.
+- `netlify/functions/create-checkout.js`: validates cart IDs and quantities against server-owned CAD prices, restricts shipping destinations to Canada, calculates shipping server-side, and creates a Stripe-hosted Checkout Session.
+  
+### Stripe activation (only when ready for sales)
+1. Verify inventory, prices, tax collection, shipping destinations and fulfillment processes.
+2. In Netlify site environment variables, set `STRIPE_SECRET_KEY` to the Stripe **secret** key (never in GitHub), and `ENABLE_CHECKOUT=true`. Optionally set `STRIPE_AUTOMATIC_TAX=true` **only after** Stripe Tax registration and settings are correctly configured.
+3. Redeploy the Netlify site so the environment variables are available to the Functions.
+4. Test with Stripe test keys and test cards, then confirm tax/shipping and order handling before switching to live keys.
+5. Configure a verified Stripe webhook and reliable order fulfillment workflow before accepting live orders. The current integration creates payment sessions but does **not** implement paid-order verification, inventory reservation, customer support, or automated fulfillment.
+
+**Do not activate live checkout yet.** Serverless checkout code is preparation, not a production-ready commerce backend. The preview cart remains functional with checkout disabled until the environment gate is set.
