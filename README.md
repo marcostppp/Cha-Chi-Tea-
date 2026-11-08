@@ -44,3 +44,11 @@ The quiz is based on flavor and ritual preferences, not medical diagnosis. Tea i
 5. Configure a verified Stripe webhook and reliable order fulfillment workflow before accepting live orders. The current integration creates payment sessions but does **not** implement paid-order verification, inventory reservation, customer support, or automated fulfillment.
 
 **Do not activate live checkout yet.** Serverless checkout code is preparation, not a production-ready commerce backend. The preview cart remains functional with checkout disabled until the environment gate is set.
+
+### Tea constitution quiz and report email
+
+The bilingual quiz scores six paired tendencies, falls back to a neutral ritual if there is no clear winner, and checks caffeine tolerance separately. Individual answers stay in page memory. The full report is available on the result screen. The optional one-time email sends the recipient address and matched profile to the email provider after an explicit request. No mailing-list enrollment is implemented.
+
+To enable email, configure a verified sender domain in Resend and set `RESEND_API_KEY` and `QUIZ_FROM_EMAIL` as function-scoped Netlify environment variables. Use a monitored sender. Review provider retention, applicable privacy requirements and contact details before enabling the form. Test with an address you control.
+
+For the offer, configure a 15% Stripe coupon with a first-time-order promotion code, and set `QUIZ_FIRST_ORDER_CODE` to that customer-facing code only after confirming the offer works in checkout. The offer appears only when report delivery and checkout are configured. Stripe applies its own first-time transaction rules. Guest checkout does not provide reliable repeat-buyer enforcement across sessions. Test this limitation and use a customer-linked checkout before relying on strict per-customer eligibility. Keep the offer variable unset until those terms are acceptable.

@@ -20,6 +20,7 @@ exports.handler=async event=>{
   const base=(process.env.URL||process.env.DEPLOY_PRIME_URL||"").replace(/\/$/,"");
   if(!/^https:\/\/[a-z0-9.-]+(?::\d+)?$/i.test(base))return json(503,{error:"Site URL is not configured"});
   const form=new URLSearchParams();
+  if (process.env.QUIZ_FIRST_ORDER_CODE) form.set("allow_promotion_codes", "true");
   form.set("mode","payment");form.set("success_url",base+"/success.html?session_id={CHECKOUT_SESSION_ID}");form.set("cancel_url",base+"/#collection");
   form.set("billing_address_collection","required");form.set("shipping_address_collection[allowed_countries][0]","CA");
   form.set("phone_number_collection[enabled]","true");
