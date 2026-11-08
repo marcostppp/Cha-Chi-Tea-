@@ -54,6 +54,8 @@ export default async function quizReport(request) {
     summary,
     fr ? 'Votre thé — ' + profile.name : 'Your tea — ' + profile.name,
     productUrl,
+    (fr ? 'Pourquoi ce thé correspond à votre tendance' : 'Why this tea fits your pattern') + '\n' + details.fit,
+    (fr ? 'À quoi vous attendre en tasse' : 'What to expect in the cup') + '\n' + details.taste,
     (fr ? 'Perspective traditionnelle' : 'Traditional perspective') + '\n' + details.tradition,
     (fr ? 'Ce que la recherche nous apprend' : 'What the research can tell us') + '\n' + details.science,
     (fr ? 'Idées pour vos repas' : 'Food to try') + '\n' + details.food,

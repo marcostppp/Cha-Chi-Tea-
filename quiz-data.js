@@ -3,6 +3,8 @@ const quizProfiles = {
     tea: 'ground', name: 'Ground', en: {
       title: 'Runs cold', term: 'Yang-deficiency tendency',
       summary: 'Feeling cold when others are comfortable and seeking warmth were recurring themes in your answers. TCM uses yang to describe warming and active qualities.',
+      fit: "When you’re the one reaching for a sweater and your hands or feet cool down at rest, a warm cup is a good fit for what you already seek out. We chose Dianhong because black tea sits on the warming side of traditional tea classifications. Try it with breakfast or on a chilly afternoon, early enough that the caffeine suits you.",
+      taste: "Full-bodied and malty, with a baked sweetness reminiscent of toasted bread.",
       tradition: 'Black tea is commonly described as warming in Chinese dietary tradition. Dianhong is a traditional-style choice for a warm morning cup.',
       science: 'Oxidation creates compounds that help give Dianhong its copper colour. A hot cup can feel warming as you drink it. Neither observation establishes that black tea changes a yang pattern.',
       food: 'If warm meals appeal to you, try an oat bowl with pear and walnuts, or a lentil, barley and vegetable soup. The warmth is a preference. The fibre and protein come from the ingredients.',
@@ -11,6 +13,8 @@ const quizProfiles = {
     }, fr: {
       title: 'Tendance à avoir froid', term: 'Tendance au vide de yang',
       summary: 'Vos réponses font ressortir une sensibilité au froid et une préférence pour la chaleur. En MTC, le yang évoque les qualités réchauffantes et actives.',
+      fit: "Si vous êtes la personne qui cherche un chandail et qui a les mains ou les pieds froids au repos, une tasse chaude rejoint ce que vous recherchez déjà. On a choisi le Dianhong parce que le thé noir se situe du côté réchauffant dans les classifications traditionnelles. Essayez-le au déjeuner ou en début d’après-midi si vous tolérez la caféine.",
+      taste: "Une tasse ample et maltée, avec une douceur qui rappelle le pain grillé.",
       tradition: 'Le thé noir est généralement décrit comme réchauffant dans la tradition alimentaire chinoise. Le Dianhong s’inscrit dans cette tradition comme tasse chaude du matin.',
       science: 'L’oxydation forme des composés qui contribuent à sa couleur cuivrée. Une tasse chaude peut procurer une sensation de chaleur en la buvant. Ces observations ne démontrent aucun changement du yang.',
       food: 'Si les repas chauds vous plaisent, essayez du gruau à la poire et aux noix ou une soupe d’orge, de lentilles et de légumes. La température est une préférence. Les fibres et les protéines viennent des ingrédients.',
@@ -22,6 +26,8 @@ const quizProfiles = {
     tea: 'mist', name: 'Mist', en: {
       title: 'Dry and warm', term: 'Yin-deficiency tendency',
       summary: 'Dryness and feeling warm later in the day stood out. TCM uses yin to describe cooling, moistening and resting qualities.',
+      fit: "Your combination of a dry mouth or throat and warmth near bedtime points toward the dry-and-warm pattern in this quiz. Mist gives you a soft cup with the traditionally milder character associated with white tea. Enjoy it earlier in the day, and reach for water when you’re thirsty or when the dryness is the main thing you notice.",
+      taste: "Soft and rounded, with dried fruit and a little sweetness from the aged leaf.",
       tradition: 'White tea is often described as cool or mild. Views on aged white tea vary, so Shou Mei is a cultural pairing to explore rather than a prescribed remedy.',
       science: 'A study of Fuding white teas measured caffeine and other compounds in Shou Mei. The amounts changed with brewing temperature. The study did not test dryness, sleep or yin.',
       food: 'Keep water within reach and include water-rich foods you enjoy, such as pears, berries or a vegetable-and-bean soup. Regular meals matter more than any one ingredient.',
@@ -30,6 +36,8 @@ const quizProfiles = {
     }, fr: {
       title: 'Chaleur et sécheresse', term: 'Tendance au vide de yin',
       summary: 'La sécheresse et la sensation de chaleur en fin de journée ressortent. En MTC, le yin évoque la fraîcheur, l’humidité et le repos.',
+      fit: "La bouche ou la gorge sèche, combinée à la chaleur près du coucher, évoque la tendance chaleur et sécheresse dans ce quiz. Mist donne une tasse douce qui s’inscrit dans le caractère plus doux associé au thé blanc en tradition chinoise. Prenez-le de jour et pensez à l’eau quand vous avez soif ou que la sécheresse se fait surtout sentir.",
+      taste: "Une tasse douce et ronde, avec des notes de fruits séchés et la douceur des feuilles vieillies.",
       tradition: 'Le thé blanc est souvent décrit comme frais ou doux. Les avis varient pour les thés blancs vieillis. Le Shou Mei est ici une association culturelle à découvrir.',
       science: 'Une étude sur les thés blancs de Fuding a mesuré la caféine et d’autres composés du Shou Mei. Les quantités variaient selon la température d’infusion. L’étude ne portait ni sur la sécheresse ni sur le sommeil.',
       food: 'Gardez de l’eau à portée de main et choisissez des aliments riches en eau que vous aimez, comme les poires, les petits fruits ou une soupe aux légumes et aux haricots. La régularité des repas compte davantage qu’un ingrédient précis.',
@@ -41,6 +49,8 @@ const quizProfiles = {
     tea: 'pivot', name: 'Pivot', en: {
       title: 'Low reserves', term: 'Qi-deficiency tendency',
       summary: 'You reported running out of energy easily and needing more recovery. In TCM, qi is a way of talking about how active and resilient you feel.',
+      fit: "If mornings feel slow and ordinary activity takes a lot out of you, Pivot fits as a low-key pause around a real meal or snack. We picked this yellow tea for its mellow character. In traditional accounts its classification ranges from mild to cool, so the pairing is about a manageable ritual while food and rest remain the priorities.",
+      taste: "Mellow and gently nutty, with a toasted-grain character and a clean finish.",
       tradition: 'Our yellow tea is a mellow option for a pause. Some traditional accounts call yellow tea cool and others describe it as mild. This is a ritual pairing, with food and rest as separate priorities.',
       science: 'Covered yellowing changes leaf pigments and taste. Caffeine can briefly increase alertness, but it does not explain or resolve ongoing low energy.',
       food: 'Plan an easy meal or snack with fibre and protein, such as eggs or tofu with whole-grain toast and fruit, so tea does not become a substitute for food.',
@@ -49,6 +59,8 @@ const quizProfiles = {
     }, fr: {
       title: 'Énergie en baisse', term: 'Tendance au vide de qi',
       summary: 'Vous dites manquer d’énergie rapidement et avoir besoin de récupérer. En MTC, le qi est une façon de parler de la vitalité et de la capacité à soutenir l’effort.',
+      fit: "Si vous démarrez lentement et que les activités ordinaires vous demandent de récupérer, Pivot se prête à une pause tranquille avec un vrai repas ou une collation. On a choisi ce thé jaune pour sa rondeur. Les textes traditionnels le décrivent comme doux ou frais. Le jumelage mise sur un rituel simple, avec les repas et le repos en priorité.",
+      taste: "Une tasse ronde, légèrement noisettée, qui rappelle les grains grillés et se termine sur une note nette.",
       tradition: 'Notre thé jaune offre une tasse douce pour une pause. Certains textes le décrivent comme frais, d’autres comme modéré. L’association concerne le rituel. Les repas et le repos demeurent prioritaires.',
       science: 'Le jaunissement à couvert modifie les pigments et la saveur. La caféine peut augmenter brièvement la vigilance. Elle ne permet pas d’expliquer ou de résoudre une fatigue persistante.',
       food: 'Prévoyez un repas ou une collation facile avec des fibres et des protéines, par exemple des œufs ou du tofu, une rôtie de grains entiers et un fruit.',
@@ -60,6 +72,8 @@ const quizProfiles = {
     tea: 'ember', name: 'Ember', en: {
       title: 'Heaviness after meals', term: 'Dampness tendency',
       summary: 'A sense of heaviness and sluggishness after eating showed up together. Dampness is a traditional way to describe this cluster of sensations.',
+      fit: "When a usual meal leaves you feeling weighed down and the same sensation shows up elsewhere in your day, we match you with the traditional after-meal ritual of ripe Pu-erh. Ember is a good way to explore that custom in a small cup after lunch. Notice how the portion, the meal and the tea feel for you individually.",
+      taste: "Deep, earthy and rounded, with a smooth finish.",
       tradition: 'Ripe Pu-erh is traditionally described as gently warming and often served after a rich meal. That custom informs this pairing.',
       science: 'Microbes, moisture and heat transform the leaves during pile fermentation. Those changes explain aspects of its flavour. They do not establish a digestive or probiotic benefit from this cup.',
       food: 'Try a comfortably sized meal with vegetables, brown rice and tofu or fish. Eat at an unhurried pace and notice which portions or foods sit comfortably.',
@@ -68,6 +82,8 @@ const quizProfiles = {
     }, fr: {
       title: 'Lourdeur après les repas', term: 'Tendance à l’humidité',
       summary: 'La lourdeur et la baisse d’élan après les repas ressortent ensemble. L’humidité est un terme traditionnel qui regroupe ces sensations.',
+      fit: "Quand un repas habituel vous laisse une sensation de lourdeur qui revient ailleurs dans la journée, on vous propose le rituel du pu-erh mûr après le repas. Ember permet de découvrir cette coutume avec une petite tasse après le dîner. Observez séparément comment vous vous sentez selon la portion, le repas et le thé.",
+      taste: "Un goût profond, terreux et rond, avec une finale douce.",
       tradition: 'Le pu-erh mûr est traditionnellement décrit comme doucement réchauffant et souvent servi après un repas copieux. Cette coutume inspire l’association.',
       science: 'Les microorganismes, l’humidité et la chaleur transforment les feuilles durant la fermentation en tas. Cela explique certains aspects du goût. Un effet digestif ou probiotique pour cette tasse reste à démontrer.',
       food: 'Essayez une portion qui vous convient avec des légumes, du riz brun et du tofu ou du poisson. Mangez tranquillement et observez les aliments et les quantités que vous tolérez bien.',
@@ -79,6 +95,8 @@ const quizProfiles = {
     tea: 'jade', name: 'Jade', en: {
       title: 'Runs warm', term: 'Heat or damp-heat tendency',
       summary: 'Feeling warm easily alongside a tendency to feel clammy or oily stood out. Some TCM traditions describe that combination with the term damp-heat.',
+      fit: "If you look for cooler air sooner than others and often feel clammy or oily, Jade is our match for exploring the cooling side of traditional tea classifications. Its fresh, light character makes sense when you’re drawn to something brisk. Use water when your main aim is to cool down or quench thirst.",
+      taste: "Fresh greens and chestnut, with a clean, lightly toasted finish.",
       tradition: 'Green tea is traditionally considered cooling. In TCM that describes the tea’s character, even when it is brewed hot.',
       science: 'Pan-firing limits oxidation and helps preserve catechins such as EGCG. Their presence does not show that Longjing cools your body or changes a constitution.',
       food: 'Keep water handy and build a meal around foods you enjoy, such as cucumbers, cooked greens, barley and beans. Choose foods you tolerate, rather than banning whole food groups.',
@@ -87,6 +105,8 @@ const quizProfiles = {
     }, fr: {
       title: 'Tendance à avoir chaud', term: 'Tendance à la chaleur ou à l’humidité-chaleur',
       summary: 'Vos réponses combinent une sensation de chaleur et une tendance à avoir la peau moite ou grasse. Certaines traditions de MTC parlent alors d’humidité-chaleur.',
+      fit: "Si vous cherchez de l’air frais avant les autres et que votre peau est souvent moite ou grasse, Jade permet de découvrir le côté rafraîchissant des classifications traditionnelles du thé. Son caractère frais et léger convient à l’envie de quelque chose de vif. Pour vous rafraîchir ou étancher votre soif, pensez d’abord à l’eau.",
+      taste: "Des notes végétales et de châtaigne, avec une finale nette et légèrement grillée.",
       tradition: 'Le thé vert est traditionnellement considéré comme rafraîchissant. En MTC, le terme décrit son caractère, même si l’infusion est chaude.',
       science: 'La chauffe à la poêle limite l’oxydation et aide à préserver des catéchines comme l’EGCG. Leur présence ne démontre pas que le Longjing refroidit le corps ou change une constitution.',
       food: 'Gardez de l’eau sous la main et composez un repas avec des aliments que vous aimez, comme du concombre, des légumes verts cuits, de l’orge et des haricots. Choisissez ce que vous tolérez bien.',
@@ -98,6 +118,8 @@ const quizProfiles = {
     tea: 'vital', name: 'Vital', en: {
       title: 'Tension and stress', term: 'Qi-stagnation tendency',
       summary: 'Feeling wound up during stressful stretches and having trouble switching gears stood out. Some TCM writing calls this quality of constraint qi stagnation.',
+      fit: "If your shoulders or jaw tense up when the day gets busy and you have trouble switching off, Vital gives you a concrete sensory cue for a break: pour a small cup, smell it before the first sip, and take a moment away from the task. We chose a traditionally neutral oolong with a distinctive aroma. If caffeine adds to that wired feeling, use a caffeine-free drink for the same ritual.",
+      taste: "A fragrant oolong with floral and honey-like notes.",
       tradition: 'Oolong is often treated as neutral in Chinese dietary tradition. Dancong’s aroma makes it a natural choice for a short sensory pause.',
       science: 'Researchers have identified floral aroma compounds in Dancong. This explains part of its scent. It is not evidence that Dancong reduces anxiety, and caffeine can feel activating.',
       food: 'Make time for a regular meal, such as a bowl of vegetables, whole grains and chickpeas. Eat away from screens if that helps you slow down.',
@@ -106,6 +128,8 @@ const quizProfiles = {
     }, fr: {
       title: 'Tension et stress', term: 'Tendance à la stagnation du qi',
       summary: 'La tension durant les périodes de stress et la difficulté à décrocher ressortent. Certains textes de MTC parlent alors de stagnation du qi.',
+      fit: "Si la mâchoire ou les épaules se crispent quand ça se bouscule et que vous décrochez difficilement, Vital donne un repère sensoriel pour faire une pause. Versez une petite tasse, sentez-la avant la première gorgée et éloignez-vous un instant de la tâche. On a choisi un oolong traditionnellement neutre au parfum distinctif. Si la caféine vous rend plus nerveux, gardez le rituel avec une boisson sans caféine.",
+      taste: "Un oolong parfumé aux notes florales et miellées.",
       tradition: 'Dans la tradition alimentaire chinoise, l’oolong est souvent considéré comme neutre. Le parfum du Dancong se prête à une courte pause sensorielle.',
       science: 'Des chercheurs ont trouvé des composés aromatiques floraux dans le Dancong. Cela explique une partie de son parfum. Un effet sur l’anxiété n’est pas démontré, et la caféine peut être stimulante.',
       food: 'Prenez le temps de manger régulièrement, par exemple un bol de légumes, de grains entiers et de pois chiches. Éloignez les écrans si cela vous aide à ralentir.',
@@ -117,6 +141,8 @@ const quizProfiles = {
     tea: 'stillpoint', name: 'Stillpoint', en: {
       title: 'Steady rhythm', term: 'Balanced tea ritual',
       summary: 'No single tendency dominated your answers. A balanced ritual is a useful starting point for exploring tea.',
+      fit: "Stillpoint is a flexible starting point when there’s no clear single match. Lightly oxidized oolong sits between green and black tea in how it’s made, and the leaves unfold over several infusions. Try it in a small daytime cup and notice when you actually enjoy having tea in your routine.",
+      taste: "Soft, floral and silky, with a lingering sweetness.",
       tradition: 'Lightly oxidized oolong sits between green and black tea in processing. Some Chinese dietary accounts place oolong in a neutral category.',
       science: 'Oolong contains caffeine and other tea compounds. Trials of caffeine and L-theanine report modest effects on some short-term attention tasks at studied doses. The dose and effects of a cup of Stillpoint were not studied.',
       food: 'Keep a variety of vegetables, fruit, whole grains and protein foods in your meals. Water is a good default throughout the day.',
@@ -125,6 +151,8 @@ const quizProfiles = {
     }, fr: {
       title: 'Rythme stable', term: 'Rituel de thé équilibré',
       summary: 'Aucune tendance ne domine dans vos réponses. Un rituel équilibré est un bon point de départ pour découvrir le thé.',
+      fit: "Stillpoint est un point de départ souple quand aucune tendance ne se démarque clairement. L’oolong légèrement oxydé se situe entre le thé vert et le thé noir par sa fabrication, et ses feuilles s’ouvrent au fil des infusions. Essayez une petite tasse de jour et voyez à quel moment vous aimez prendre le thé.",
+      taste: "Doux, floral et soyeux, avec une douceur qui persiste.",
       tradition: 'L’oolong légèrement oxydé se situe entre le thé vert et le thé noir par sa fabrication. Certains textes chinois le classent dans la catégorie neutre.',
       science: 'L’oolong contient de la caféine et d’autres composés. Des essais sur la caféine et la L-théanine observent des effets modestes sur certaines tâches d’attention à court terme aux doses étudiées. Une tasse de Stillpoint n’a pas été étudiée.',
       food: 'Variez les légumes, fruits, grains entiers et aliments protéinés. L’eau demeure une bonne boisson au fil de la journée.',

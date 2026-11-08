@@ -121,3 +121,11 @@ footer .brand-mark { margin-bottom: 14px; }
 @media (max-width: 480px) {
   .quiz-match { grid-template-columns: 1fr; }
 }
+.quiz-clues { padding: .7rem .85rem; background: var(--sky-tint); border-radius: 8px; }
+.quiz-reasons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin: 1rem 0; }
+.quiz-reasons > div { border: 1px solid var(--line); border-radius: 10px; padding: .75rem; }
+.quiz-reasons h4 { margin: 0 0 .35rem; font-size: .88rem; color: var(--tea); }
+.quiz-reasons p { margin: 0; font-size: .88rem; }
+@media (max-width: 480px) {
+  .quiz-reasons { grid-template-columns: 1fr; }
+}
