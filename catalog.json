@@ -18,12 +18,17 @@
     {
       "id": "mist",
       "name": "Mist",
-      "type": "Aged Shou Mei white tea",
+      "type": "2018 Fuding Shou Mei aged white tea",
       "origin": "Pan Xi, Fujian",
       "weight_grams": 50,
       "price_cad": 30,
       "inventory_status": "unverified",
-      "stripe_payment_link": null
+      "stripe_payment_link": null,
+      "photo_assets_pending": [
+        "shou-mei-tin",
+        "shou-mei-loose-leaf",
+        "shou-mei-lifestyle"
+      ]
     },
     {
       "id": "stillpoint",
