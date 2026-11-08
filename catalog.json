@@ -85,12 +85,16 @@
     {
       "id": "jade",
       "name": "Jade",
-      "type": "Shifeng Longjing green tea",
+      "type": "Pre-Qingming 2026 Shifeng Longjing green tea",
       "origin": "Hangzhou, Zhejiang",
       "weight_grams": 50,
       "price_cad": 30,
       "inventory_status": "unverified",
-      "stripe_payment_link": null
+      "stripe_payment_link": null,
+      "photo_assets_pending": [
+        "longjing-tin-lifestyle",
+        "longjing-loose-leaf-white-background"
+      ]
     }
   ]
 }
