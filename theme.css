@@ -11,6 +11,9 @@
   --gold: var(--tea);
   --line: #d8c2b8;
   --sky-tint: #dbeaf1;
+  --radius: 18px;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
 }
 
 .brand-mark {
