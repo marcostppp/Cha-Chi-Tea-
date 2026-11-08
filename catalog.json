@@ -13,7 +13,21 @@
       "weight_grams": 50,
       "price_cad": 30,
       "inventory_status": "unverified",
-      "stripe_payment_link": null
+      "stripe_payment_link": null,
+      "photos": [
+        {
+          "type": "hero",
+          "path": "images/ember-hero.webp"
+        },
+        {
+          "type": "lifestyle",
+          "path": "images/ember-lifestyle.webp"
+        },
+        {
+          "type": "leaves",
+          "path": "images/ember-leaves.webp"
+        }
+      ]
     },
     {
       "id": "mist",
@@ -24,10 +38,19 @@
       "price_cad": 30,
       "inventory_status": "unverified",
       "stripe_payment_link": null,
-      "photo_assets_pending": [
-        "shou-mei-tin",
-        "shou-mei-loose-leaf",
-        "shou-mei-lifestyle"
+      "photos": [
+        {
+          "type": "hero",
+          "path": "images/mist-hero.webp"
+        },
+        {
+          "type": "lifestyle",
+          "path": "images/mist-lifestyle.webp"
+        },
+        {
+          "type": "leaves",
+          "path": "images/mist-leaves.webp"
+        }
       ]
     },
     {
@@ -39,9 +62,15 @@
       "price_cad": 30,
       "inventory_status": "unverified",
       "stripe_payment_link": null,
-      "photo_assets_pending": [
-        "green-oolong-loose-leaf-white-background",
-        "green-oolong-tin-lifestyle"
+      "photos": [
+        {
+          "type": "hero",
+          "path": "images/stillpoint-hero.webp"
+        },
+        {
+          "type": "leaves",
+          "path": "images/stillpoint-leaves.webp"
+        }
       ]
     },
     {
@@ -53,9 +82,15 @@
       "price_cad": 30,
       "inventory_status": "unverified",
       "stripe_payment_link": null,
-      "photo_assets_pending": [
-        "black-tea-loose-leaf-white-background",
-        "black-tea-tin-lifestyle"
+      "photos": [
+        {
+          "type": "hero",
+          "path": "images/ground-hero.webp"
+        },
+        {
+          "type": "leaves",
+          "path": "images/ground-leaves.webp"
+        }
       ]
     },
     {
@@ -67,9 +102,15 @@
       "price_cad": 30,
       "inventory_status": "unverified",
       "stripe_payment_link": null,
-      "photo_assets_pending": [
-        "dancong-tin-lifestyle",
-        "dancong-loose-leaf-white-background"
+      "photos": [
+        {
+          "type": "hero",
+          "path": "images/vital-hero.webp"
+        },
+        {
+          "type": "leaves",
+          "path": "images/vital-leaves.webp"
+        }
       ]
     },
     {
@@ -81,9 +122,15 @@
       "price_cad": 30,
       "inventory_status": "unverified",
       "stripe_payment_link": null,
-      "photo_assets_pending": [
-        "yellow-tea-loose-leaf-white-background",
-        "yellow-tea-tin-lifestyle"
+      "photos": [
+        {
+          "type": "hero",
+          "path": "images/pivot-hero.webp"
+        },
+        {
+          "type": "leaves",
+          "path": "images/pivot-leaves.webp"
+        }
       ]
     },
     {
@@ -95,9 +142,15 @@
       "price_cad": 30,
       "inventory_status": "unverified",
       "stripe_payment_link": null,
-      "photo_assets_pending": [
-        "longjing-tin-lifestyle",
-        "longjing-loose-leaf-white-background"
+      "photos": [
+        {
+          "type": "hero",
+          "path": "images/jade-hero.webp"
+        },
+        {
+          "type": "leaves",
+          "path": "images/jade-leaves.webp"
+        }
       ]
     }
   ]
