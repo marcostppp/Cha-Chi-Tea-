@@ -1,0 +1,25 @@
+:root {
+  --tea: #652a22;
+  --forest: #47591d;
+  --forest-dark: #283613;
+  --leaf: #898c31;
+  --sky: #a6cee2;
+  --cream: #f3e6e0;
+  --paper: #fffaf6;
+  --ink: #332820;
+  --muted: #60534b;
+  --gold: var(--tea);
+  --line: #d8c2b8;
+  --sky-tint: #dbeaf1;
+}
+
+.brand-mark {
+  display: block;
+  width: clamp(116px, 18vw, 153px);
+  height: auto;
+}
+
+footer .brand-mark {
+  margin-inline: auto;
+  filter: brightness(0) invert(1);
+}

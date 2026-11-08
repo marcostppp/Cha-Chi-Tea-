@@ -1,7 +1,7 @@
 const teaPageText = {
   en: {
     collection: 'Collection', bag: 'Bag', language: 'Lire en français', back: 'Back to the collection',
-    gallery: 'Product photos', hero: 'Tin', leaves: 'Leaves', lifestyle: 'Lifestyle',
+    gallery: 'Product photos',
     add: 'Add to bag', added: 'Added to your bag.', origin: 'Where it grows',
     history: 'History', fact: 'Did you know?', brewing: 'How to brew it',
     tcm: 'The traditional Chinese medicine view', science: 'What the science says',
@@ -15,7 +15,7 @@ const teaPageText = {
   },
   fr: {
     collection: 'Collection', bag: 'Panier', language: 'Read in English', back: 'Retour à la collection',
-    gallery: 'Photos du produit', hero: 'Boîte', leaves: 'Feuilles', lifestyle: 'Ambiance',
+    gallery: 'Photos du produit',
     add: 'Ajouter au panier', added: 'Ajouté à votre panier.', origin: 'Région et producteurs',
     history: 'Histoire', fact: 'Le saviez-vous?', brewing: 'Comment l’infuser',
     tcm: 'Le regard de la médecine traditionnelle chinoise', science: 'Ce que dit la science',
@@ -64,12 +64,12 @@ function renderTea() {
     <article>
       <div class="product-hero">
         <div class="gallery">
-          <img class="hero-image" id="main-photo" src="/${photo.path}" alt="${product.name} · ${labels[photo.type]}" width="900" height="600">
+          <img class="hero-image" id="main-photo" src="/${photo.path}" alt="${product.name} · Photo ${product.photos.indexOf(photo) + 1}" width="900" height="600">
           <div class="thumbs" role="group" aria-label="${labels.gallery}">
-            ${product.photos.map(image => `
+            ${product.photos.map((image, index) => `
               <button class="thumb" type="button" data-photo="${image.type}" aria-pressed="${image.type === selectedPhoto}">
                 <img src="/${image.path}" alt="" width="55" height="36">
-                ${labels[image.type]}
+                Photo ${index + 1}
               </button>`).join('')}
           </div>
         </div>
@@ -148,7 +148,7 @@ page.addEventListener('click', event => {
     const photo = product.photos.find(image => image.type === selectedPhoto);
     const mainPhoto = document.getElementById('main-photo');
     mainPhoto.src = '/' + photo.path;
-    mainPhoto.alt = `${product.name} · ${teaPageText[currentLanguage][selectedPhoto]}`;
+    mainPhoto.alt = `${product.name} · Photo ${product.photos.indexOf(photo) + 1}`;
     page.querySelector('.thumb[aria-pressed="true"]').setAttribute('aria-pressed', 'false');
     thumbnail.setAttribute('aria-pressed', 'true');
   }

@@ -20,12 +20,12 @@
           "path": "images/ember-hero.webp"
         },
         {
-          "type": "lifestyle",
-          "path": "images/ember-lifestyle.webp"
-        },
-        {
           "type": "leaves",
           "path": "images/ember-leaves.webp"
+        },
+        {
+          "type": "lifestyle",
+          "path": "images/ember-lifestyle.webp"
         }
       ]
     },
@@ -44,12 +44,12 @@
           "path": "images/mist-hero.webp"
         },
         {
-          "type": "lifestyle",
-          "path": "images/mist-lifestyle.webp"
-        },
-        {
           "type": "leaves",
           "path": "images/mist-leaves.webp"
+        },
+        {
+          "type": "lifestyle",
+          "path": "images/mist-lifestyle.webp"
         }
       ]
     },
