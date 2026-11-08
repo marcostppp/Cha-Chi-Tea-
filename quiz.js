@@ -48,9 +48,8 @@ const flavourPatterns = ['cold', 'dry', 'energy', 'heavy', 'heat', 'tension', 'b
 
 const quizCopy = {
   en: {
-    intro: 'A day in your shoes.', start: 'Start the quiz',
-    framing: 'Picture an ordinary day over the past month, from the first alarm to the moment you finally wind down.',
-    method: 'Explore seven tea profiles inspired by traditional Chinese medicine, including a steady-rhythm result for days when no single pattern stands out.',
+    intro: 'Think of a typical day.', start: 'Start the quiz',
+    framing: 'Answer based on how you’ve usually felt over the past month.',
     framework: 'Why seven tea profiles?', frameworkDetail: 'The traditional constitution framework describes nine types. Our tea quiz pairs six tendencies and a steady-rhythm result with our seven teas. Blood stasis and special sensitivity are part of the wider tradition.',
     warmClue: 'often feeling warm indoors', coldClue: 'often feeling chilly indoors',
     dampNote: 'In TCM, daytime warmth with an oily or shiny face can also point toward a damp-heat tendency. Here it’s an extra clue about your warmth pattern.',
@@ -73,9 +72,8 @@ const quizCopy = {
     sending: 'Sending…'
   },
   fr: {
-    intro: 'Une journée à votre façon.', start: 'Commencer le quiz',
-    framing: 'Pensez à une journée ordinaire du dernier mois, du premier réveil au moment où vous décrochez enfin.',
-    method: 'Découvrez sept profils de thé inspirés de la médecine traditionnelle chinoise, dont un profil de rythme stable quand aucune tendance ne ressort.',
+    intro: 'Pensez à une journée ordinaire.', start: 'Commencer le quiz',
+    framing: 'Répondez selon la façon dont vous vous êtes senti la plupart du temps au cours du dernier mois.',
     framework: 'Pourquoi sept profils de thé?', frameworkDetail: 'Le cadre traditionnel des constitutions décrit neuf types. Notre quiz associe six tendances et un profil de rythme stable à nos sept thés. La stase de sang et la sensibilité particulière font partie du cadre traditionnel plus large.',
     warmClue: 'une sensation fréquente de chaleur à l’intérieur', coldClue: 'une sensation fréquente de froid à l’intérieur',
     dampNote: 'En MTC, la chaleur en journée accompagnée d’un visage gras ou brillant peut aussi évoquer une tendance à l’humidité-chaleur. C’est ici un indice de plus pour nuancer votre profil.',
@@ -135,7 +133,7 @@ function renderQuiz(focus = false) {
   const copy = quizCopy[lang];
   const index = lang === 'fr' ? 2 : 1;
   if (quizStep < 0) {
-    quizPanel.innerHTML = `<h3 tabindex="-1">${copy.intro}</h3><p>${copy.framing}</p><p>${copy.method}</p><details class="quiz-framework"><summary>${copy.framework}</summary><p>${copy.frameworkDetail}</p></details><p class="notice">${copy.local}</p><button class="cta" type="button" data-quiz-action="start">${copy.start} →</button>`;
+    quizPanel.innerHTML = `<h3 tabindex="-1">${copy.intro}</h3><p>${copy.framing}</p><details class="quiz-framework"><summary>${copy.framework}</summary><p>${copy.frameworkDetail}</p></details><p class="notice">${copy.local}</p><button class="cta" type="button" data-quiz-action="start">${copy.start} →</button>`;
   } else if (quizStep < bodyQuestions.length) {
     const [question, choices] = bodyQuestions[quizStep][index];
     quizPanel.innerHTML = `
