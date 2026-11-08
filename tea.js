@@ -4,12 +4,11 @@ const teaPageText = {
     gallery: 'Product photos',
     add: 'Add to bag', added: 'Added to your bag.', origin: 'Where it grows',
     history: 'History', fact: 'Did you know?', brewing: 'How to brew it',
-    tcm: 'The traditional Chinese medicine view', science: 'What the science says',
+    tcm: 'The traditional Chinese medicine view', science: 'The science in the cup',
     links: 'On this page', sources: 'Sources and further reading',
     growerNote: 'The individual grower for this lot is pending supplier confirmation.',
     brewIntro: 'Gongfu brewing is a series of short steeps using the same leaves. Here’s a starting point.',
     water: 'Water', ratio: 'Leaves per 100 mL', time: 'First steep',
-    tcmNote: 'In this tradition, “warming” and “cooling” are categories separate from the temperature in your cup. The descriptions here are cultural context.',
     scienceNote: 'This tea naturally contains caffeine. The amount in your cup varies with the leaf and how you brew it.',
     missing: 'This tea page is unavailable. You can find all seven teas in the collection.'
   },
@@ -18,12 +17,11 @@ const teaPageText = {
     gallery: 'Photos du produit',
     add: 'Ajouter au panier', added: 'Ajouté à votre panier.', origin: 'Région et producteurs',
     history: 'Histoire', fact: 'Le saviez-vous?', brewing: 'Comment l’infuser',
-    tcm: 'Le regard de la médecine traditionnelle chinoise', science: 'Ce que dit la science',
+    tcm: 'Le regard de la médecine traditionnelle chinoise', science: 'La science dans la tasse',
     links: 'Sur cette page', sources: 'Sources et lectures',
     growerNote: 'L’identité du producteur de ce lot reste à confirmer auprès du fournisseur.',
     brewIntro: 'L’infusion gongfu consiste à infuser les mêmes feuilles plusieurs fois, brièvement. Voici un point de départ.',
     water: 'Eau', ratio: 'Feuilles par 100 mL', time: 'Première infusion',
-    tcmNote: 'Dans cette tradition, « réchauffant » et « rafraîchissant » décrivent des catégories distinctes de la température de l’infusion. Ces descriptions donnent un contexte culturel.',
     scienceNote: 'Ce thé contient naturellement de la caféine. La quantité dans votre tasse varie selon les feuilles et l’infusion.',
     missing: 'Cette fiche est indisponible. Vous trouverez les sept thés dans la collection.'
   }
@@ -117,7 +115,6 @@ function renderTea() {
         <section id="tcm">
           <h2>${labels.tcm}</h2>
           <p>${copy.tcm}</p>
-          <p class="context">${labels.tcmNote}</p>
         </section>
         <section id="science">
           <h2>${labels.science}</h2>

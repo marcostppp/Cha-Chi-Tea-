@@ -5,12 +5,11 @@ const teaReferences = {
   processing: ['Research review on tea processing and chemistry', 'Revue scientifique sur la transformation et la chimie du thé', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8605308/'],
   caffeine: ['Health Canada on caffeine', 'Santé Canada et la caféine', 'https://www.canada.ca/en/health-canada/services/food-nutrition/food-safety/food-additives/caffeine-foods.html'],
   emberHistory: ['Research review on the making of Pu-erh', 'Revue scientifique sur la fabrication du pu-erh', 'https://www.sciencedirect.com/science/article/abs/pii/S0963996921007997'],
-  emberScience: ['Study on microbial activity during pile fermentation', 'Étude sur l’activité microbienne durant la fermentation en tas', 'https://pubmed.ncbi.nlm.nih.gov/36441948/'],
+  emberScience: ['Study on aroma during pile fermentation', 'Étude sur les arômes durant la fermentation en tas', 'https://pubmed.ncbi.nlm.nih.gov/38984291/'],
   mistHistory: ['Fujian’s white tea heritage', 'Le patrimoine du thé blanc du Fujian', 'https://www.fujian.gov.cn/english/cultureandtravel/cultureandarts/202508/t20250807_6988976.htm'],
   mistScience: ['Study comparing Shou Mei with other Fuding white teas', 'Étude comparant le Shou Mei à d’autres thés blancs de Fuding', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6170294/'],
   stillpointOrigin: ['Alishan’s tea-growing villages', 'Les villages producteurs de thé d’Ali Shan', 'https://www.ali-nsa.net/en/explore/local-flavors'],
   stillpointHistory: ['Taiwan’s cultural archive on Qing Xin and Shizhuo', 'Archives culturelles de Taïwan sur le Qing Xin et Shizhuo', 'https://tcmb.culture.tw/zh-tw/detail?id=573583&indexCode=Culture_Event'],
-  attention: ['Review of human studies on tea, theanine and caffeine', 'Revue d’études chez l’humain sur le thé, la théanine et la caféine', 'https://pubmed.ncbi.nlm.nih.gov/40314930/'],
   groundHistory: ['Yunnan’s agricultural department on Dianhong', 'Le ministère de l’Agriculture du Yunnan sur le Dianhong', 'https://nync.yn.gov.cn/html/2025/yzycfycj_0407/1418141.html'],
   groundScience: ['Research review on tea polyphenols and colour', 'Revue scientifique sur les polyphénols et la couleur du thé', 'https://doi.org/10.1097/nt.0000000000000304'],
   vitalHistory: ['China’s geographical indication profile for Phoenix Dancong', 'Fiche chinoise d’indication géographique du Dancong de Phoenix', 'https://english.cnipa.gov.cn/attach/0/f58ad13a80124345b20967c7fc5bcb8c.pdf'],
@@ -20,7 +19,6 @@ const teaReferences = {
   pivotScience: ['Research review on yellowing and tea flavour', 'Revue scientifique sur le jaunissement et les saveurs du thé', 'https://academic.oup.com/ijfst/article/57/7/4001/7806561'],
   jadeHistory: ['Hangzhou’s Lion Peak tea garden', 'Le jardin de thé de la colline du Lion à Hangzhou', 'https://www.ehangzhou.gov.cn/2018-08/15/c_262281.htm'],
   jadeCraft: ['Hangzhou on the craft of pan-firing Longjing', 'La torréfaction du Longjing à la poêle selon Hangzhou', 'https://ehangzhou.gov.cn/2026-03/25/c_297094.htm'],
-  greenResearch: ['U.S. National Center for Complementary and Integrative Health on tea', 'Centre national américain de santé complémentaire et intégrative, dossier sur le thé', 'https://www.nccih.nih.gov/health/tea']
 };
 
 const teaStories = {
@@ -37,7 +35,7 @@ const teaStories = {
       fact: 'Shou means ripe. Sheng means raw. Those words tell you how the tea was made, and an older sheng is still sheng.',
       brewing: 'Give the leaves a quick rinse and discard that water. Start at the short end of the range, pour the gaiwan out completely, then add time as the cup gets lighter.',
       tcm: 'Traditional Chinese dietary writing often describes ripe Pu-erh as gently warming. That helps explain its association with cold-weather tea drinking and the custom of serving a dark, mellow cup after a rich meal.',
-      science: 'During pile fermentation, microbes, moisture and heat change the leaf’s chemistry. This helps explain Ember’s dark colour and mellow flavour. Research on how the tea is made leaves the traditional idea of digestive warmth untested.'
+      science: "During pile fermentation, microbes, heat and moisture transform the leaf. Studies of ripe Pu-erh link this step to the development of its characteristic aroma. Take a moment to notice the earthy scent before your first sip after lunch."
     },
     fr: {
       type: 'Shou pu-erh de Menghai, 2019',
@@ -49,7 +47,7 @@ const teaStories = {
       fact: 'Shou veut dire « mûr » et sheng veut dire « cru ». Ces mots décrivent la fabrication. Un sheng reste un sheng en vieillissant.',
       brewing: 'Rincez brièvement les feuilles et jetez l’eau de rinçage. Commencez par une infusion courte, videz le gaiwan complètement, puis allongez les infusions quand la tasse devient plus légère.',
       tcm: 'Dans la tradition alimentaire chinoise, le pu-erh mûr est souvent décrit comme doucement réchauffant. Cette lecture aide à comprendre pourquoi on l’associe aux journées froides et à la tasse de thé sombre et ronde après un repas copieux.',
-      science: 'Pendant la fermentation en tas, les microorganismes, l’humidité et la chaleur transforment la chimie des feuilles. Cela aide à expliquer la couleur foncée et le goût rond d’Ember. Les études sur la fabrication laissent ouverte la question de la chaleur digestive au sens traditionnel.'
+      science: "Durant la fermentation en tas, les microorganismes, la chaleur et l’humidité transforment les feuilles. Des études sur le pu-erh mûr relient cette étape au développement de son arôme caractéristique. Après le dîner, prenez le temps de sentir les notes terreuses avant la première gorgée."
     }
   },
   mist: {
@@ -65,7 +63,7 @@ const teaStories = {
       fact: 'Shou Mei means “longevity eyebrows,” a reference to the look of the leaves.',
       brewing: 'Start at 90 °C for a softer cup. Try the warmer end of the range on a later steep if you want more body. Keep the leaves and brew again as long as the cup still tastes good.',
       tcm: 'White tea is often placed on the cool or mild side in Chinese dietary tradition. Views on aged white tea vary. The traditional association is with a refreshing cup, even when age gives it a deeper flavour.',
-      science: 'A study of Fuding white teas, including Shou Mei, measured caffeine, theanine and catechins in the brew. Water temperature changed what ended up in the cup. Mist’s soft taste tells you about flavour, while its caffeine content depends on the leaves and how you brew them.'
+      science: "Researchers brewing Fuding Shou Mei found that water temperature changed how much caffeine, theanine and catechins went into the cup. Start at the gentler end of the brewing guide and taste how the leaves open over a few short infusions."
     },
     fr: {
       type: 'Shou Mei de Fuding, 2018 · Thé blanc vieilli',
@@ -77,12 +75,12 @@ const teaStories = {
       fact: 'Shou Mei signifie « sourcils de longévité », un clin d’œil à l’apparence des feuilles.',
       brewing: 'Commencez à 90 °C pour une tasse plus douce. Essayez une eau un peu plus chaude à l’infusion suivante pour donner du corps au thé. Réinfusez tant que la tasse vous plaît.',
       tcm: 'Dans la tradition alimentaire chinoise, le thé blanc est souvent considéré comme frais ou doux. Les avis varient pour les thés blancs vieillis. On les associe à une tasse rafraîchissante, même lorsque l’âge a approfondi leur saveur.',
-      science: 'Une étude sur les thés blancs de Fuding, dont le Shou Mei, a mesuré la caféine, la théanine et les catéchines dans l’infusion. La température de l’eau changeait ce qui passait dans la tasse. La douceur de Mist décrit son goût, tandis que sa teneur en caféine dépend des feuilles et de l’infusion.'
+      science: "En infusant du Shou Mei de Fuding, des chercheurs ont observé que la température de l’eau changeait les quantités de caféine, de théanine et de catéchines dans la tasse. Commencez au bas de la plage de température suggérée et goûtez comment les feuilles s’expriment au fil des infusions."
     }
   },
   stillpoint: {
     brew: ['90–95 °C', 5, '20–30'],
-    sources: ['stillpointOrigin', 'stillpointHistory', 'processing', 'attention'],
+    sources: ['stillpointOrigin', 'stillpointHistory', 'processing'],
     en: {
       type: 'Spring 2026 Ali Shan Qing Xin · Green oolong',
       description: 'Silky and floral, with a pale gold cup and a sweetness that lingers. The first pour is delicate. The next brings more body as the rolled leaves open.',
@@ -93,7 +91,7 @@ const teaStories = {
       fact: 'Look into the gaiwan after a few rounds. A handful of little green pellets can open into broad leaves, sometimes still attached to their stems.',
       brewing: 'Leave room in your gaiwan for the leaves to unfold. Give the first pour around 25 seconds. If the second tastes fuller, keep it short before gradually extending later steeps.',
       tcm: 'Oolong is often described as balanced or neutral in Chinese dietary tradition. For a lightly processed style like this one, that gives a simple way to place it between brisk green tea and richer black tea in a tasting.',
-      science: 'Partial oxidation changes the balance of plant compounds in oolong. Human studies on caffeine and L-theanine have found modest short-term changes in some attention tasks at studied doses. Those findings concern specific preparations and doses. The amounts in a cup of Stillpoint depend on the leaves and the brew.'
+      science: "Partial oxidation changes the mix of compounds in oolong leaves as their flavour develops. The tightly rolled leaves open gradually in the gaiwan. Try two short infusions side by side and see how the floral aroma and texture change."
     },
     fr: {
       type: 'Qing Xin d’Ali Shan, printemps 2026 · Oolong vert',
@@ -105,7 +103,7 @@ const teaStories = {
       fact: 'Regardez dans le gaiwan après quelques infusions. Ces petites perles vertes peuvent s’ouvrir en grandes feuilles, parfois encore attachées à leur tige.',
       brewing: 'Laissez de la place aux feuilles dans le gaiwan. Donnez environ 25 secondes à la première infusion. Si la deuxième est déjà plus corsée, gardez-la courte et allongez graduellement les suivantes.',
       tcm: 'Dans la tradition alimentaire chinoise, l’oolong est souvent décrit comme équilibré ou neutre. Pour un oolong peu oxydé comme celui-ci, c’est une façon simple de le situer entre un thé vert vif et un thé noir plus riche.',
-      science: 'L’oxydation partielle modifie l’équilibre des composés de la feuille. Des études chez l’humain sur la caféine et la L-théanine ont observé des effets modestes à court terme sur certaines tâches d’attention, avec des doses précises. Les quantités présentes dans une tasse de Stillpoint dépendent des feuilles et de l’infusion.'
+      science: "L’oxydation partielle modifie le mélange de composés dans les feuilles à mesure que la saveur de l’oolong se développe. Les feuilles roulées s’ouvrent graduellement dans le gaiwan. Comparez deux infusions courtes pour remarquer comment le parfum floral et la texture évoluent."
     }
   },
   ground: {
@@ -121,7 +119,7 @@ const teaStories = {
       fact: 'In China, this style is called red tea for the colour in the cup. In English, the same category is known as black tea.',
       brewing: 'Try 10–15 seconds first for a soft, malty cup. Add a few seconds to later steeps. If it gets dry or sharp, shorten the next pour.',
       tcm: 'Black tea is usually described as warming in Chinese dietary tradition, which is why it often appears in cold-season tea advice. For a taste comparison, try Ground beside Jade and notice how rounded the black tea feels.',
-      science: 'Oxidation transforms some catechins into compounds such as theaflavins and thearubigins. These help shape the copper colour and briskness. They explain changes in the leaf and cup. The traditional warming category comes from a separate framework.'
+      science: "During black tea making, oxidation creates compounds called theaflavins and thearubigins. They help give Dianhong its copper colour and brisk taste. Try it warm with breakfast and see which notes come through as the cup cools."
     },
     fr: {
       type: 'Dianhong Jin Ya de Fengqing, printemps 2026 · Thé noir',
@@ -133,7 +131,7 @@ const teaStories = {
       fact: 'En Chine, on parle de thé rouge en référence à la couleur de l’infusion. En français, cette même famille porte le nom de thé noir.',
       brewing: 'Essayez de 10 à 15 secondes pour une première tasse douce et maltée. Ajoutez quelques secondes aux infusions suivantes. Si le thé devient astringent, raccourcissez la prochaine.',
       tcm: 'Dans la tradition alimentaire chinoise, le thé noir est généralement décrit comme réchauffant. Voilà pourquoi il revient souvent dans les conseils de dégustation pour la saison froide. Comparez Ground à Jade pour remarquer la rondeur du thé noir.',
-      science: 'L’oxydation transforme certaines catéchines en composés comme les théaflavines et les théarubigines. Ils contribuent à la teinte cuivrée et au caractère vif du thé. Ces changements sont mesurables dans les feuilles et l’infusion. La notion traditionnelle de chaleur relève d’un autre cadre.'
+      science: "Pendant la fabrication du thé noir, l’oxydation forme des théaflavines et des théarubigines. Ces composés contribuent à la couleur cuivrée et au goût vif du Dianhong. Essayez-le chaud au déjeuner et remarquez les notes qui ressortent quand la tasse refroidit."
     }
   },
   vital: {
@@ -149,7 +147,7 @@ const teaStories = {
       fact: 'Mi Lan Xiang means “honey orchid fragrance.” Try smelling the empty cup after your first pour. The scent often lingers there.',
       brewing: 'Pour fast and drain fully. Try a five-second first infusion once the water is in, then add seconds as the leaves open. Use less leaf if you prefer a softer cup.',
       tcm: 'Oolong is often described as neutral in Chinese dietary tradition. Some seasonal accounts associate it with autumn. Vital’s strong perfume makes it a good example of how a tea in that category can still have a vivid sensory character.',
-      science: 'Researchers comparing Phoenix Dancong styles identified aroma compounds such as linalool and geraniol. Different mixtures help explain the range of floral and honeyed scents. This research describes what you smell in the cup. The traditional idea of neutrality is a separate way of describing tea.'
+      science: "Researchers have identified floral compounds in Phoenix Dancong, including linalool derivatives and geraniol. These contribute to the scent that makes Vital such an inviting tea for a pause. Smell the warm leaves, then the empty cup, and compare the two."
     },
     fr: {
       type: 'Mi Lan Xiang de Wudong, printemps 2026 · Oolong Dancong',
@@ -161,7 +159,7 @@ const teaStories = {
       fact: 'Mi Lan Xiang signifie « parfum de miel et d’orchidée ». Sentez la tasse vide après la première infusion. Le parfum s’y attarde souvent.',
       brewing: 'Versez rapidement et videz le gaiwan au complet. Essayez cinq secondes une fois l’eau versée, puis ajoutez quelques secondes à mesure que les feuilles s’ouvrent. Réduisez la quantité de feuilles si vous aimez un thé plus doux.',
       tcm: 'Dans la tradition alimentaire chinoise, l’oolong est souvent décrit comme neutre. Certains textes saisonniers l’associent à l’automne. Le parfum marqué de Vital montre à quel point un thé de cette famille peut être expressif.',
-      science: 'En comparant des Dancong de Phoenix, des chercheurs ont repéré des composés aromatiques comme le linalol et le géraniol. Leurs différents mélanges aident à expliquer la diversité des parfums floraux et miellés. Ces travaux décrivent les arômes de la tasse. La neutralité est une notion propre au cadre traditionnel.'
+      science: "Des chercheurs ont identifié des composés floraux dans le Dancong de Phoenix, dont des dérivés du linalol et le géraniol. Ils contribuent au parfum qui fait de Vital un thé agréable pour une pause. Sentez les feuilles chaudes, puis la tasse vide, et comparez les deux."
     }
   },
   pivot: {
@@ -177,7 +175,7 @@ const teaStories = {
       fact: 'Huangya means “yellow buds.” The pale golden colour develops as the tea is made.',
       brewing: 'Start at 80 °C. Steep about 25 seconds, then taste. Add a little time or heat if the cup is too light. Keep the pour gentle and let the sweetness come through.',
       tcm: 'Some Chinese dietary accounts group yellow tea with the cooler teas, while others describe it as milder. Pivot is an easy way to taste what people mean by a mellow tea, regardless of where a text places it on the warming–cooling scale.',
-      science: 'During sealed yellowing, heat and moisture change pigments and other compounds in the leaf. That helps explain why yellow tea can taste softer and less grassy than a green tea. The chemistry explains the sensory difference. Traditional cooling belongs to a separate framework.'
+      science: "Yellow tea gets a warm, covered rest during processing. Heat and moisture change compounds in the leaf, helping give the cup its golden colour and softer, less grassy character. Sip Pivot warm and see what comes through as it cools."
     },
     fr: {
       type: 'Mengding Huangya, printemps 2026 · Thé jaune',
@@ -189,12 +187,12 @@ const teaStories = {
       fact: 'Huangya signifie « bourgeons jaunes ». La teinte dorée se développe pendant la fabrication.',
       brewing: 'Commencez à 80 °C et infusez environ 25 secondes avant de goûter. Si la tasse est trop légère, augmentez un peu le temps ou la température. Versez doucement pour laisser ressortir la douceur.',
       tcm: 'Certains textes de tradition alimentaire chinoise rangent le thé jaune du côté des thés frais. D’autres le décrivent comme plus doux. Pivot permet de goûter cette rondeur, quelle que soit sa place sur l’échelle traditionnelle du chaud et du frais.',
-      science: 'Pendant le jaunissement à couvert, la chaleur et l’humidité modifient des pigments et d’autres composés des feuilles. Cela aide à expliquer le goût plus rond et moins herbacé du thé jaune. La chimie décrit cette différence de saveur. La fraîcheur traditionnelle relève d’un autre cadre.'
+      science: "Les feuilles de thé jaune reposent au chaud et à couvert pendant la fabrication. La chaleur et l’humidité transforment certains composés, ce qui contribue à la couleur dorée et au goût plus doux et moins herbacé. Goûtez Pivot chaud, puis remarquez ce qui ressort quand il refroidit."
     }
   },
   jade: {
     brew: ['75–85 °C', 3, '20–35'],
-    sources: ['jadeHistory', 'jadeCraft', 'processing', 'greenResearch'],
+    sources: ['jadeHistory', 'jadeCraft', 'processing'],
     en: {
       type: 'Pre-Qingming 2026 Shifeng Longjing · Green tea',
       description: 'Flat spring leaves brew into a fresh, clean cup with chestnut and tender greens. Start with gentle heat to let the sweetness sit alongside the vegetal notes.',
@@ -205,7 +203,7 @@ const teaStories = {
       fact: '“Pre-Qingming” means picked before Qingming, the early-April solar term. It describes the harvest window.',
       brewing: 'Use about 80 °C water for the first steep. Start at 25 seconds and add time if you want a stronger cup. Try it plain first to catch the chestnut note.',
       tcm: 'Green tea is commonly described as cooling in traditional Chinese medicine and associated with refreshment and thirst. In that framework, cooling is a traditional description of the tea even when you serve it hot.',
-      science: 'Pan-firing slows the leaf’s oxidation by deactivating enzymes. That helps green teas retain catechins such as EGCG. Research on brewed green tea and on concentrated extracts uses different doses and preparations. The traditional cooling category is distinct from the chemistry researchers measure.'
+      science: "Heating the leaves in a pan early in processing slows oxidation and helps green tea retain catechins such as EGCG. Taste Jade with a short, gentle infusion to bring out the fresh character prized in Longjing."
     },
     fr: {
       type: 'Longjing de Shifeng, avant Qingming 2026 · Thé vert',
@@ -217,7 +215,7 @@ const teaStories = {
       fact: '« Avant Qingming » désigne une récolte faite avant Qingming, un repère du calendrier solaire au début d’avril.',
       brewing: 'Essayez une eau à environ 80 °C et une première infusion de 25 secondes. Allongez ensuite si vous préférez un goût plus prononcé. Goûtez-le nature pour mieux saisir la note de châtaigne.',
       tcm: 'En médecine traditionnelle chinoise, le thé vert est souvent décrit comme rafraîchissant et associé à la soif. Dans ce cadre, la fraîcheur est une caractéristique traditionnelle du thé, même quand on le sert chaud.',
-      science: 'La chauffe à la poêle désactive les enzymes qui favorisent l’oxydation. Le thé vert conserve ainsi des catéchines comme l’EGCG. Les études sur le thé vert infusé et celles sur les extraits concentrés utilisent des doses et des préparations différentes. La notion traditionnelle de fraîcheur se distingue de ce que la chimie mesure.'
+      science: "Chauffer les feuilles à la poêle tôt dans la fabrication ralentit l’oxydation et aide le thé vert à conserver des catéchines comme l’EGCG. Goûtez Jade avec une infusion courte et douce pour faire ressortir la fraîcheur recherchée dans le Longjing."
     }
   }
 };
