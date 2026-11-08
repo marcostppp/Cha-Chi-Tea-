@@ -63,12 +63,16 @@
     {
       "id": "pivot",
       "name": "Pivot",
-      "type": "Mengding Huangya yellow tea",
-      "origin": "Mengding, Sichuan",
+      "type": "Spring 2026 Mengding Huangya yellow tea",
+      "origin": "Mengding Mountain, Sichuan",
       "weight_grams": 50,
       "price_cad": 30,
       "inventory_status": "unverified",
-      "stripe_payment_link": null
+      "stripe_payment_link": null,
+      "photo_assets_pending": [
+        "yellow-tea-loose-leaf-white-background",
+        "yellow-tea-tin-lifestyle"
+      ]
     },
     {
       "id": "jade",
