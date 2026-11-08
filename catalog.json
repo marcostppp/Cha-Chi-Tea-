@@ -47,12 +47,16 @@
     {
       "id": "ground",
       "name": "Ground",
-      "type": "Dianhong Jin Ya black tea",
+      "type": "Spring 2026 Fengqing Dianhong Jin Ya black tea",
       "origin": "Fengqing, Yunnan",
       "weight_grams": 50,
       "price_cad": 30,
       "inventory_status": "unverified",
-      "stripe_payment_link": null
+      "stripe_payment_link": null,
+      "photo_assets_pending": [
+        "black-tea-loose-leaf-white-background",
+        "black-tea-tin-lifestyle"
+      ]
     },
     {
       "id": "vital",
