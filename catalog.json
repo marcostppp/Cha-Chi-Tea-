@@ -61,12 +61,16 @@
     {
       "id": "vital",
       "name": "Vital",
-      "type": "Mi Lan Xiang Dancong oolong",
-      "origin": "Wudong, Guangdong",
+      "type": "Spring 2026 Wudong Mi Lan Xiang Dancong oolong",
+      "origin": "Wudong Mountain, Chaozhou, Guangdong",
       "weight_grams": 50,
       "price_cad": 30,
       "inventory_status": "unverified",
-      "stripe_payment_link": null
+      "stripe_payment_link": null,
+      "photo_assets_pending": [
+        "dancong-tin-lifestyle",
+        "dancong-loose-leaf-white-background"
+      ]
     },
     {
       "id": "pivot",
