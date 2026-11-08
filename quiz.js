@@ -8,24 +8,24 @@ const bodyQuestions = [
   ['heavy',
     ['An hour after your usual lunch, what’s the scene?', ['I feel comfortable and ready to move on', 'A little sluggish once in a while', 'I often feel heavy enough to slow down', 'Most days I feel weighed down after lunch'], 'heaviness after a usual meal'],
     ['Une heure après votre dîner habituel, comment vous sentez-vous?', ['À l’aise et prêt à passer à la suite', 'Un peu au ralenti de temps en temps', 'Souvent assez lourd pour ralentir', 'La plupart du temps, j’ai une sensation de lourdeur'], 'une sensation de lourdeur après un repas habituel']],
-  ['cold',
-    ['Everyone else looks comfortable. What are you doing?', ['Usually comfortable too', 'Sometimes putting on a sweater', 'Often reaching for an extra layer', 'Regularly looking for the warmest spot in the room'], 'reaching for warmth indoors'],
-    ['Votre entourage semble à l’aise. Et vous?', ['En général, je suis bien aussi', 'Je mets parfois un chandail', 'J’ajoute souvent une couche', 'Je cherche régulièrement le coin le plus chaud'], 'le besoin de vous réchauffer à l’intérieur']],
+  ['temperature',
+    ['Think of a normal day indoors, sitting still in a room others find comfortable. How does your whole body usually feel?', ['Usually cold, even with an extra layer', 'Often chilly', 'A little chilly sometimes', 'Comfortable most of the time', 'A little warm sometimes', 'Often warmer than I’d like', 'Usually hot, even in light clothes'], ''],
+    ['Pensez à une journée ordinaire, assis à l’intérieur dans une pièce où les autres sont à l’aise. Comment vous sentez-vous en général?', ['J’ai généralement froid, même avec un chandail de plus', 'J’ai souvent froid', 'J’ai un peu froid à l’occasion', 'Je suis à l’aise la plupart du temps', 'J’ai un peu chaud à l’occasion', 'J’ai souvent plus chaud que je le voudrais', 'J’ai généralement chaud, même en vêtements légers'], '']],
   ['dry',
     ['A long conversation or a busy afternoon. How does your mouth or throat feel?', ['Usually comfortable', 'Dry once in a while', 'Often dry enough that I notice', 'Dry most days, even outside those moments'], 'a dry mouth or throat'],
     ['Après une longue conversation ou un après-midi chargé, comment vont votre bouche et votre gorge?', ['En général, ça va bien', 'Un peu sèches de temps en temps', 'Souvent assez sèches pour que je le remarque', 'Sèches la plupart des jours, même en dehors de ces moments'], 'la bouche ou la gorge sèche']],
   ['heat',
-    ['You walk into a room everyone else finds comfortable. What’s your move?', ['Nothing, it feels fine to me', 'I sometimes take off a layer', 'I often get warm and look for some air', 'I’m usually the first to want a cooler spot'], 'feeling warm sooner than others'],
-    ['Vous entrez dans une pièce où tout le monde semble bien. Que faites-vous?', ['Rien, je suis bien aussi', 'J’enlève parfois une couche', 'J’ai souvent chaud et je cherche un peu d’air', 'Je cherche presque toujours un endroit plus frais en premier'], 'une sensation de chaleur plus rapide que les autres']],
+    ['When you feel too warm indoors, what happens after you’ve been sitting still for a few minutes in light clothes?', ['I rarely get too warm indoors', 'I usually cool off within a few minutes', 'I often stay warm even after resting for a bit', 'I can feel hot for long stretches, even at rest'], 'heat that lingers after you settle down'],
+    ['Quand vous avez trop chaud à l’intérieur, que se passe-t-il après quelques minutes au repos, en vêtements légers?', ['J’ai rarement trop chaud à l’intérieur', 'Je me rafraîchis généralement en quelques minutes', 'J’ai souvent encore chaud après un moment au repos', 'Je peux avoir chaud longtemps, même au repos'], 'une chaleur qui persiste au repos']],
   ['energy',
     ['After your usual errands, walk, or workday, how much is left in the tank?', ['Enough for whatever’s next', 'I need a short pause sometimes', 'I often need extra time to recharge', 'Most days I’m spent after ordinary activity'], 'needing extra recovery after everyday activity'],
     ['Après vos courses, votre marche ou votre journée de travail habituelle, combien d’énergie vous reste-t-il?', ['Assez pour ce qui vient ensuite', 'J’ai parfois besoin d’une petite pause', 'J’ai souvent besoin de plus de temps pour récupérer', 'La plupart du temps, une activité ordinaire m’épuise'], 'un besoin de récupérer après les activités courantes']],
   ['heavy',
     ['Think about the rest of the day. Does that weighed-down feeling follow you?', ['Rarely, if ever', 'Sometimes, mostly after a big meal', 'Often, even outside meals', 'Most days, including on quieter days'], 'a weighed-down feeling beyond mealtimes'],
     ['Pensez au reste de la journée. Est-ce que cette sensation de lourdeur vous suit?', ['Rarement, voire jamais', 'Parfois, surtout après un gros repas', 'Souvent, même en dehors des repas', 'La plupart du temps, même les journées tranquilles'], 'une sensation de lourdeur en dehors des repas']],
-  ['heat',
-    ['By mid-afternoon, how does your skin tend to feel in ordinary conditions?', ['Usually comfortable', 'A bit clammy or oily sometimes', 'Often clammy or oily', 'Clammy or oily on most days'], 'skin that often feels clammy or oily'],
-    ['Vers le milieu de l’après-midi, comment est votre peau dans des conditions normales?', ['En général, rien de particulier', 'Parfois un peu moite ou grasse', 'Souvent moite ou grasse', 'Moite ou grasse la plupart des jours'], 'une peau souvent moite ou grasse']],
+  ['heatSkin',
+    ['When you feel warm during the day, what do you notice about the skin on your face, especially around your nose or forehead?', ['Nothing in particular', 'It feels oily or looks shiny once in a while', 'It often feels oily or looks shiny', 'It feels oily or looks shiny on most warm days'], ''],
+    ['Quand vous avez chaud le jour, que remarquez-vous sur votre visage, surtout autour du nez ou sur le front?', ['Rien de particulier', 'Ma peau est grasse ou brillante de temps en temps', 'Ma peau est souvent grasse ou brillante', 'Ma peau est grasse ou brillante la plupart des jours où j’ai chaud'], '']],
   ['tension',
     ['The day is done, and you finally have a quiet moment. What happens next?', ['I switch off fairly easily', 'Some days I replay things for a while', 'I often feel wired even when I’m tired', 'Most evenings I have trouble switching off'], 'difficulty switching off after a demanding day'],
     ['La journée est finie et vous avez enfin un moment tranquille. Qu’est-ce qui se passe?', ['Je décroche assez facilement', 'Certains jours, je repense à ce qui s’est passé', 'Je me sens souvent sur les nerfs même si je suis fatigué', 'J’ai du mal à décrocher la plupart des soirs'], 'de la difficulté à décrocher après une journée exigeante']],
@@ -33,8 +33,8 @@ const bodyQuestions = [
     ['How do your hands and feet usually feel when you’re sitting still indoors?', ['About right', 'Cool every now and then', 'Noticeably cold quite often', 'Cold on most days'], 'cold hands or feet at rest'],
     ['Comment se sentent vos mains et vos pieds quand vous êtes assis à l’intérieur?', ['À une température confortable', 'Frais de temps en temps', 'Assez froids régulièrement', 'Froids la plupart des jours'], 'les mains ou les pieds froids au repos']],
   ['dry',
-    ['Near bedtime in a comfortable room, do you find yourself feeling warmer?', ['Rarely or never', 'Some evenings', 'Often enough that I notice', 'Most evenings'], 'a feeling of warmth toward bedtime'],
-    ['À l’approche du coucher, avez-vous tendance à avoir chaud même si la pièce est confortable?', ['Rarement ou jamais', 'Certains soirs', 'Assez souvent pour le remarquer', 'La plupart des soirs'], 'une sensation de chaleur à l’approche du coucher']],
+    ['Once you’ve settled in for the evening, do your palms or the soles of your feet feel unusually warm even if the room itself feels fine?', ['Rarely or never', 'Some evenings', 'Often enough that I notice', 'Most evenings'], 'unusually warm palms or soles in the evening'],
+    ['Une fois installé pour la soirée, avez-vous les paumes ou la plante des pieds particulièrement chaudes même si la pièce est confortable?', ['Rarement ou jamais', 'Certains soirs', 'Assez souvent pour le remarquer', 'La plupart des soirs'], 'les paumes ou la plante des pieds particulièrement chaudes en soirée']],
   ['flavour',
     ['Pick the first thing you’d reach for on a tasting table.', ['Toasted bread or malt', 'Dried fruit or a soft sweetness', 'Toasted nuts or grains', 'Something earthy and deep', 'Fresh greens or chestnut', 'Flowers or honey', 'Something soft and silky', 'Surprise me'], ''],
     ['Sur une table de dégustation, qu’est-ce qui vous attire en premier?', ['Du pain grillé ou du malt', 'Des fruits séchés ou une douceur légère', 'Des noix ou des grains grillés', 'Quelque chose de profond et terreux', 'Des notes végétales ou de châtaigne', 'Des fleurs ou du miel', 'Quelque chose de doux et soyeux', 'Surprenez-moi'], '']],
@@ -43,13 +43,17 @@ const bodyQuestions = [
     ['Comment réagissez-vous aux boissons caféinées?', ['Ça se passe généralement bien', 'Je peux être nerveux ou mal dormir', 'J’évite la caféine'], '']]
 ];
 
+const temperatureScores = [-3, -2, -1, 0, 1, 2, 3];
 const flavourPatterns = ['cold', 'dry', 'energy', 'heavy', 'heat', 'tension', 'balanced'];
 
 const quizCopy = {
   en: {
     intro: 'A day in your shoes.', start: 'Start the quiz',
     framing: 'Picture an ordinary day over the past month, from the first alarm to the moment you finally wind down.',
-    method: 'Explore six tendencies from traditional Chinese medicine through the rhythms of your everyday life, then discover a tea ritual to try.',
+    method: 'Explore seven tea profiles inspired by traditional Chinese medicine, including a steady-rhythm result for days when no single pattern stands out.',
+    framework: 'Why seven tea profiles?', frameworkDetail: 'The traditional constitution framework describes nine types. Our tea quiz pairs six tendencies and a steady-rhythm result with our seven teas. Blood stasis and special sensitivity are part of the wider tradition.',
+    warmClue: 'often feeling warm indoors', coldClue: 'often feeling chilly indoors',
+    dampNote: 'In TCM, daytime warmth with an oily or shiny face can also point toward a damp-heat tendency. Here it’s an extra clue about your warmth pattern.',
     note: 'Your rhythm can change with the season or your routine. Notice how the tea feels to you and revisit your answers as your habits change.',
     local: 'Your individual answers stay on this page.',
     clues: 'What tipped the match', fit: 'Why this tea fits your pattern', taste: 'What’s in the cup',
@@ -71,7 +75,10 @@ const quizCopy = {
   fr: {
     intro: 'Une journée à votre façon.', start: 'Commencer le quiz',
     framing: 'Pensez à une journée ordinaire du dernier mois, du premier réveil au moment où vous décrochez enfin.',
-    method: 'Explorez six tendances de la médecine traditionnelle chinoise à travers votre quotidien et découvrez un rituel de thé à essayer.',
+    method: 'Découvrez sept profils de thé inspirés de la médecine traditionnelle chinoise, dont un profil de rythme stable quand aucune tendance ne ressort.',
+    framework: 'Pourquoi sept profils de thé?', frameworkDetail: 'Le cadre traditionnel des constitutions décrit neuf types. Notre quiz associe six tendances et un profil de rythme stable à nos sept thés. La stase de sang et la sensibilité particulière font partie du cadre traditionnel plus large.',
+    warmClue: 'une sensation fréquente de chaleur à l’intérieur', coldClue: 'une sensation fréquente de froid à l’intérieur',
+    dampNote: 'En MTC, la chaleur en journée accompagnée d’un visage gras ou brillant peut aussi évoquer une tendance à l’humidité-chaleur. C’est ici un indice de plus pour nuancer votre profil.',
     note: 'Votre rythme peut changer avec les saisons ou votre routine. Observez comment vous vous sentez avec ce thé et revenez au quiz quand vos habitudes changent.',
     local: 'Vos réponses individuelles restent sur cette page.',
     clues: 'Ce qui a fait pencher la balance', fit: 'Pourquoi ce thé correspond à votre tendance', taste: 'À quoi vous attendre en tasse',
@@ -99,24 +106,36 @@ let reportStatus = null;
 
 function matchQuiz(answers) {
   const patterns = new Map();
+  const addSignal = (pattern, value) => {
+    const scores = patterns.get(pattern) || [];
+    scores.push(value);
+    patterns.set(pattern, scores);
+  };
+  let dampClue = false;
   bodyQuestions.forEach(([pattern], index) => {
     if (pattern === 'flavour' || pattern === 'caffeine') return;
-    const scores = patterns.get(pattern) || [];
-    scores.push(answers[index]);
-    patterns.set(pattern, scores);
+    if (pattern === 'temperature') {
+      const temperature = temperatureScores[answers[index]] ?? 0;
+      addSignal('cold', Math.max(0, -temperature));
+      addSignal('heat', Math.max(0, temperature));
+    } else if (pattern === 'heatSkin') {
+      dampClue = answers[index] >= 2;
+    } else {
+      addSignal(pattern, answers[index]);
+    }
   });
   const candidates = [...patterns].filter(([, [a, b]]) => a > 0 && b > 0 && a + b >= 4)
     .map(([pattern, [a, b]]) => ({ pattern, score: a + b }))
     .sort((a, b) => b.score - a.score);
   const mixed = candidates.length > 1 && candidates[0].score === candidates[1].score;
-  return { key: !mixed && candidates.length ? candidates[0].pattern : 'balanced', mixed };
+  return { key: !mixed && candidates.length ? candidates[0].pattern : 'balanced', mixed, dampClue };
 }
 
 function renderQuiz(focus = false) {
   const copy = quizCopy[lang];
   const index = lang === 'fr' ? 2 : 1;
   if (quizStep < 0) {
-    quizPanel.innerHTML = `<h3 tabindex="-1">${copy.intro}</h3><p>${copy.framing}</p><p>${copy.method}</p><p class="notice">${copy.local}</p><button class="cta" type="button" data-quiz-action="start">${copy.start} →</button>`;
+    quizPanel.innerHTML = `<h3 tabindex="-1">${copy.intro}</h3><p>${copy.framing}</p><p>${copy.method}</p><details class="quiz-framework"><summary>${copy.framework}</summary><p>${copy.frameworkDetail}</p></details><p class="notice">${copy.local}</p><button class="cta" type="button" data-quiz-action="start">${copy.start} →</button>`;
   } else if (quizStep < bodyQuestions.length) {
     const [question, choices] = bodyQuestions[quizStep][index];
     quizPanel.innerHTML = `
@@ -135,6 +154,8 @@ function renderQuiz(focus = false) {
     const clues = bodyQuestions.flatMap(([pattern, en, fr], questionIndex) =>
       pattern === result.key && quizAnswers[questionIndex] > 0 ? [(lang === 'fr' ? fr : en)[2]] : []
     );
+    if (result.key === 'heat') clues.unshift(copy.warmClue);
+    if (result.key === 'cold') clues.unshift(copy.coldClue);
     const flavourIndex = quizAnswers.at(-2);
     const flavour = flavourPatterns[flavourIndex];
     quizPanel.innerHTML = `
@@ -151,7 +172,7 @@ function renderQuiz(focus = false) {
         ${flavour ? `<p><b>${copy.picked}</b> · ${bodyQuestions.at(-2)[index][1][flavourIndex]}. ${flavour === result.key ? copy.tasteMatch : copy.tasteOther}</p>` : ''}</div>
       </div>
       <div class="quiz-reasons">
-        <div><h4>${copy.tradition}</h4><p>${details.tradition}</p></div>
+        <div><h4>${copy.tradition}</h4><p>${details.tradition}</p>${result.key === 'heat' && result.dampClue ? `<p>${copy.dampNote}</p>` : ''}</div>
         <div><h4>${copy.science}</h4><p>${details.science}</p></div>
       </div>
       ${caution ? `<p class="quiz-caution">${caution}</p>` : ''}

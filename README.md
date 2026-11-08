@@ -47,7 +47,7 @@ The quiz is based on flavor and ritual preferences, not medical diagnosis. Tea i
 
 ### Tea constitution quiz and report email
 
-The bilingual quiz scores six paired tendencies, falls back to a neutral ritual if there is no clear winner, and checks caffeine tolerance separately. The flavour question adds tasting context only. Individual answers stay in page memory. The full report is available on the result screen. The optional one-time email sends the recipient address and matched profile to the email provider after an explicit request. No mailing-list enrollment is implemented.
+The bilingual quiz scores six paired tendencies, falls back to a neutral ritual if there is no clear winner, and checks caffeine tolerance separately. A single indoor-temperature scale contributes to either cold or heat. An optional skin clue adds damp-heat context to a warmth result, and evening warmth in the palms or soles is scored with dryness. The flavour question adds tasting context only. Individual answers stay in page memory. The full report is available on the result screen. The optional one-time email sends the recipient address and matched profile to the email provider after an explicit request. No mailing-list enrollment is implemented.
 
 To enable email, configure a verified sender domain in Resend and set `RESEND_API_KEY` and `QUIZ_FROM_EMAIL` as function-scoped Netlify environment variables. Use a monitored sender. Review provider retention, applicable privacy requirements and contact details before enabling the form. Test with an address you control.
 

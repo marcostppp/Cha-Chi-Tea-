@@ -2,7 +2,7 @@ const quizProfiles = {
   cold: {
     tea: 'ground', name: 'Ground', en: {
       title: 'Runs cold', term: 'Yang-deficiency tendency',
-      summary: 'Feeling cold when others are comfortable and seeking warmth were recurring themes in your answers. TCM uses yang to describe warming and active qualities.',
+      summary: 'Feeling chilly indoors and getting cold hands or feet at rest came through in your answers. TCM uses yang to describe warming and active qualities.',
       fit: "When you’re the one reaching for a sweater and your hands or feet cool down at rest, a warm cup is a good fit for what you already seek out. We chose Dianhong because black tea sits on the warming side of traditional tea classifications. Try it with breakfast or on a chilly afternoon, early enough that the caffeine suits you.",
       taste: "Full-bodied and malty, with a baked sweetness reminiscent of toasted bread.",
       tradition: 'Black tea is commonly described as warming in Chinese dietary tradition. Dianhong is a traditional-style choice for a warm morning cup.',
@@ -12,7 +12,7 @@ const quizProfiles = {
       brew: 'Start with a small, lightly brewed cup earlier in the day. Keep plain water as your main drink.'
     }, fr: {
       title: 'Tendance à avoir froid', term: 'Tendance au vide de yang',
-      summary: 'Vos réponses font ressortir une sensibilité au froid et une préférence pour la chaleur. En MTC, le yang évoque les qualités réchauffantes et actives.',
+      summary: 'Vos réponses font ressortir le froid à l’intérieur et les mains ou les pieds froids au repos. En MTC, le yang évoque les qualités réchauffantes et actives.',
       fit: "Si vous êtes la personne qui cherche un chandail et qui a les mains ou les pieds froids au repos, une tasse chaude rejoint ce que vous recherchez déjà. On a choisi le Dianhong parce que le thé noir se situe du côté réchauffant dans les classifications traditionnelles. Essayez-le au déjeuner ou en début d’après-midi si vous tolérez la caféine.",
       taste: "Une tasse ample et maltée, avec une douceur qui rappelle le pain grillé.",
       tradition: 'Le thé noir est généralement décrit comme réchauffant dans la tradition alimentaire chinoise. Le Dianhong s’inscrit dans cette tradition comme tasse chaude du matin.',
@@ -25,8 +25,8 @@ const quizProfiles = {
   dry: {
     tea: 'mist', name: 'Mist', en: {
       title: 'Dry and warm', term: 'Yin-deficiency tendency',
-      summary: 'Dryness and feeling warm later in the day stood out. TCM uses yin to describe cooling, moistening and resting qualities.',
-      fit: "Your combination of a dry mouth or throat and warmth near bedtime points toward the dry-and-warm pattern in this quiz. Mist gives you a soft cup with the traditionally milder character associated with white tea. Enjoy it earlier in the day, and reach for water when you’re thirsty or when the dryness is the main thing you notice.",
+      summary: 'A dry mouth or throat and unusually warm palms or soles in the evening stood out. TCM uses yin to describe cooling, moistening and resting qualities.',
+      fit: "Your combination of a dry mouth or throat and warm palms or soles in the evening points toward the dry-and-warm pattern in this quiz. Mist gives you a soft cup with the traditionally milder character associated with white tea. Enjoy it earlier in the day, and reach for water when you’re thirsty or when the dryness is the main thing you notice.",
       taste: "Soft and rounded, with dried fruit and a little sweetness from the aged leaf.",
       tradition: 'White tea is often described as cool or mild in Chinese dietary tradition. Mist brings that gentle character into a daytime tea ritual. Let the infusion cool to a comfortable temperature and take your time with it.',
       science: "Researchers brewing Fuding Shou Mei found that water temperature changed how much caffeine, theanine and catechins went into the cup. Start at the gentler end of the brewing guide and taste how the leaves open over a few short infusions.",
@@ -35,8 +35,8 @@ const quizProfiles = {
       brew: 'If you enjoy white tea, make it a small daytime cup. Mild flavour is an unreliable guide to caffeine.'
     }, fr: {
       title: 'Chaleur et sécheresse', term: 'Tendance au vide de yin',
-      summary: 'La sécheresse et la sensation de chaleur en fin de journée ressortent. En MTC, le yin évoque la fraîcheur, l’humidité et le repos.',
-      fit: "La bouche ou la gorge sèche, combinée à la chaleur près du coucher, évoque la tendance chaleur et sécheresse dans ce quiz. Mist donne une tasse douce qui s’inscrit dans le caractère plus doux associé au thé blanc en tradition chinoise. Prenez-le de jour et pensez à l’eau quand vous avez soif ou que la sécheresse se fait surtout sentir.",
+      summary: 'La bouche ou la gorge sèche et la chaleur aux paumes ou à la plante des pieds en soirée ressortent. En MTC, le yin évoque la fraîcheur, l’humidité et le repos.',
+      fit: "La bouche ou la gorge sèche, combinée à la chaleur aux paumes ou à la plante des pieds en soirée, évoque la tendance chaleur et sécheresse dans ce quiz. Mist donne une tasse douce qui s’inscrit dans le caractère plus doux associé au thé blanc en tradition chinoise. Prenez-le de jour et pensez à l’eau quand vous avez soif ou que la sécheresse se fait surtout sentir.",
       taste: "Une tasse douce et ronde, avec des notes de fruits séchés et la douceur des feuilles vieillies.",
       tradition: 'Le thé blanc est souvent décrit comme frais ou doux dans la tradition alimentaire chinoise. Mist reprend ce caractère doux dans un rituel de jour. Laissez tiédir la tasse et prenez le temps de la déguster.',
       science: "En infusant du Shou Mei de Fuding, des chercheurs ont observé que la température de l’eau changeait les quantités de caféine, de théanine et de catéchines dans la tasse. Commencez au bas de la plage de température suggérée et goûtez comment les feuilles s’expriment au fil des infusions.",
@@ -93,9 +93,9 @@ const quizProfiles = {
   },
   heat: {
     tea: 'jade', name: 'Jade', en: {
-      title: 'Runs warm', term: 'Heat or damp-heat tendency',
-      summary: 'Feeling warm easily alongside a tendency to feel clammy or oily stood out. Some TCM traditions describe that combination with the term damp-heat.',
-      fit: "If you look for cooler air sooner than others and often feel clammy or oily, Jade is our match for exploring the cooling side of traditional tea classifications. Its fresh, light character makes sense when you’re drawn to something brisk. Use water when your main aim is to cool down or quench thirst.",
+      title: 'Runs warm', term: 'Warmth tendency',
+      summary: 'Feeling warm indoors and staying warm even after you slow down came through together. TCM uses the idea of heat to describe a pattern like this.',
+      fit: "If you tend to feel warm in a comfortable room and the warmth takes time to pass, Jade is our match for exploring the cooling side of traditional tea classifications. Its fresh, light character makes sense when you’re drawn to something brisk. Use water when your main aim is to cool down or quench thirst.",
       taste: "Fresh greens and chestnut, with a clean, lightly toasted finish.",
       tradition: 'Green tea is traditionally considered cooling. In TCM that describes the tea’s character, even when it is brewed hot.',
       science: "Heating the leaves in a pan early in processing slows oxidation and helps green tea retain catechins such as EGCG. Taste Jade with a short, gentle infusion to bring out the fresh character prized in Longjing.",
@@ -103,9 +103,9 @@ const quizProfiles = {
       routine: 'Dress for the weather and adjust activity when it is hot. If heat intolerance or sweating is new or persistent, have it assessed.',
       brew: 'Try a light cup earlier in the day. Sip plain water for thirst.'
     }, fr: {
-      title: 'Tendance à avoir chaud', term: 'Tendance à la chaleur ou à l’humidité-chaleur',
-      summary: 'Vos réponses combinent une sensation de chaleur et une tendance à avoir la peau moite ou grasse. Certaines traditions de MTC parlent alors d’humidité-chaleur.',
-      fit: "Si vous cherchez de l’air frais avant les autres et que votre peau est souvent moite ou grasse, Jade permet de découvrir le côté rafraîchissant des classifications traditionnelles du thé. Son caractère frais et léger convient à l’envie de quelque chose de vif. Pour vous rafraîchir ou étancher votre soif, pensez d’abord à l’eau.",
+      title: 'Tendance à avoir chaud', term: 'Tendance à la chaleur',
+      summary: 'Vos réponses font ressortir une sensation de chaleur à l’intérieur qui persiste même quand vous ralentissez. La MTC emploie la notion de chaleur pour décrire ce genre de tendance.',
+      fit: "Si vous avez souvent chaud dans une pièce confortable et que la sensation tarde à passer, Jade permet de découvrir le côté rafraîchissant des classifications traditionnelles du thé. Son caractère frais et léger convient à l’envie de quelque chose de vif. Pour vous rafraîchir ou étancher votre soif, pensez d’abord à l’eau.",
       taste: "Des notes végétales et de châtaigne, avec une finale nette et légèrement grillée.",
       tradition: 'Le thé vert est traditionnellement considéré comme rafraîchissant. En MTC, le terme décrit son caractère, même si l’infusion est chaude.',
       science: "Chauffer les feuilles à la poêle tôt dans la fabrication ralentit l’oxydation et aide le thé vert à conserver des catéchines comme l’EGCG. Goûtez Jade avec une infusion courte et douce pour faire ressortir la fraîcheur recherchée dans le Longjing.",
@@ -164,6 +164,7 @@ const quizProfiles = {
 
 const quizSources = [
   ['Traditional constitution questionnaire research', 'Recherche sur les questionnaires de constitution', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10164641/'],
+  ['Research on how TCM constitution signs overlap', 'Recherche sur le chevauchement des signes en MTC', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9356699/'],
   ['Tea categories in Chinese dietary tradition', 'Familles de thé dans la tradition alimentaire chinoise', 'https://health.people.com.cn/n1/2021/0315/c14739-32051473.html'],
   ['Tea processing and chemistry', 'Transformation et chimie du thé', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8605308/'],
   ['Fuding white tea infusion study', 'Étude sur l’infusion du thé blanc de Fuding', 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6170294/'],

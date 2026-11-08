@@ -129,3 +129,6 @@ footer .brand-mark { margin-bottom: 14px; }
 @media (max-width: 480px) {
   .quiz-reasons { grid-template-columns: 1fr; }
 }
+.quiz-framework { margin: .7rem 0; color: var(--muted); font-size: .85rem; }
+.quiz-framework summary { cursor: pointer; color: var(--forest); font-weight: 700; }
+.quiz-reasons p + p { margin-top: .6rem; }
