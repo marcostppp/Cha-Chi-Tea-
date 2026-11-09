@@ -1,4 +1,21 @@
 const quizProfiles = {
+  dampheat: {
+    tea:'jade',name:'Jade',
+    en:{title:'Hot & Humid',term:'Damp-heat constitution-inspired tendency',
+      summary:'Your answers suggest warmth together with heaviness, easy sweating or oily skin. In TCM, this combination is often discussed as damp-heat.',
+      fit:'Jade, our Shifeng Longjing green tea, offers a fresh, light and bright tasting experience. The pairing draws on traditional tea classifications and your flavour preferences, not a promise to change body temperature.',
+      taste:'Fresh green notes with a gently toasted chestnut finish.',
+      tradition:'Green tea is traditionally described as cooling in many Chinese dietary frameworks. Individual experiences vary.',
+      science:'Pan-firing helps shape Longjing’s distinctive aroma and green character. Brewing strength changes the amount of caffeine extracted.',
+      food:'Try fresh fruit or a light savoury snack with your tea.',routine:'Keep water available and notice which habits suit you.',brew:'Try a small daytime cup and adjust strength to your caffeine tolerance.'},
+    fr:{title:'Chaleur et humidité',term:'Tendance inspirée de la constitution humidité-chaleur',
+      summary:'Vos réponses évoquent une sensation de chaleur accompagnée de lourdeur, de transpiration facile ou d’une peau grasse. En MTC, cette combinaison est souvent associée à l’humidité-chaleur.',
+      fit:'Jade, notre thé vert Shifeng Longjing, offre une tasse fraîche, légère et lumineuse. Ce jumelage s’inspire des classifications traditionnelles et de vos goûts, sans promettre de modifier la température du corps.',
+      taste:'Des notes végétales fraîches et une finale délicatement grillée de châtaigne.',
+      tradition:'Dans plusieurs traditions alimentaires chinoises, le thé vert est décrit comme rafraîchissant. Le ressenti varie selon les personnes.',
+      science:'La cuisson à la poêle contribue au parfum distinctif du Longjing. L’intensité de l’infusion influence la quantité de caféine extraite.',
+      food:'Accompagnez-le de fruits frais ou d’une collation salée légère.',routine:'Gardez de l’eau à portée de main et observez les habitudes qui vous conviennent.',brew:'Essayez une petite tasse de jour et adaptez l’intensité à votre tolérance à la caféine.'}
+  },
   cold: {
     tea: 'ground', name: 'Ground', en: {
       title: 'Runs cold', term: 'Yang-deficiency tendency',
