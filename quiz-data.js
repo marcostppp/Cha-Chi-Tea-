@@ -25,8 +25,8 @@ const quizProfiles = {
   dry: {
     tea: 'mist', name: 'Mist', en: {
       title: 'Dry and warm', term: 'Yin-deficiency tendency',
-      summary: 'A dry mouth or throat and unusually warm palms or soles in the evening stood out. TCM uses yin to describe cooling, moistening and resting qualities.',
-      fit: "Your combination of a dry mouth or throat and warm palms or soles in the evening points toward the dry-and-warm pattern in this quiz. Mist gives you a soft cup with the traditionally milder character associated with white tea. Enjoy it earlier in the day, and reach for water when you’re thirsty or when the dryness is the main thing you notice.",
+      summary: 'Dryness and feeling warmer than comfortable stood out in your answers. In TCM, yin is associated with cooling, moistening and resting qualities.',
+      fit: "Your answers suggest a tendency toward dryness, sometimes alongside feeling warm. Mist gives you a soft cup with the traditionally milder character associated with white tea. Enjoy it earlier in the day, and reach for water when you’re thirsty or when the dryness is the main thing you notice.",
       taste: "Soft and rounded, with dried fruit and a little sweetness from the aged leaf.",
       tradition: 'White tea is often described as cool or mild in Chinese dietary tradition. Mist brings that gentle character into a daytime tea ritual. Let the infusion cool to a comfortable temperature and take your time with it.',
       science: "Researchers brewing Fuding Shou Mei found that water temperature changed how much caffeine, theanine and catechins went into the cup. Start at the gentler end of the brewing guide and taste how the leaves open over a few short infusions.",
@@ -35,8 +35,8 @@ const quizProfiles = {
       brew: 'If you enjoy white tea, make it a small daytime cup. Mild flavour is an unreliable guide to caffeine.'
     }, fr: {
       title: 'Chaleur et sécheresse', term: 'Tendance au vide de yin',
-      summary: 'La bouche ou la gorge sèche et la chaleur aux paumes ou à la plante des pieds en soirée ressortent. En MTC, le yin évoque la fraîcheur, l’humidité et le repos.',
-      fit: "La bouche ou la gorge sèche, combinée à la chaleur aux paumes ou à la plante des pieds en soirée, évoque la tendance chaleur et sécheresse dans ce quiz. Mist donne une tasse douce qui s’inscrit dans le caractère plus doux associé au thé blanc en tradition chinoise. Prenez-le de jour et pensez à l’eau quand vous avez soif ou que la sécheresse se fait surtout sentir.",
+      summary: 'La sécheresse et une tendance à avoir chaud ressortent de vos réponses. En MTC, le yin évoque la fraîcheur, l’humidité et le repos.',
+      fit: "Vos réponses évoquent une tendance à la sécheresse, parfois accompagnée d’une sensation de chaleur. Mist donne une tasse douce qui s’inscrit dans le caractère plus doux associé au thé blanc en tradition chinoise. Prenez-le de jour et pensez à l’eau quand vous avez soif ou que la sécheresse se fait surtout sentir.",
       taste: "Une tasse douce et ronde, avec des notes de fruits séchés et la douceur des feuilles vieillies.",
       tradition: 'Le thé blanc est souvent décrit comme frais ou doux dans la tradition alimentaire chinoise. Mist reprend ce caractère doux dans un rituel de jour. Laissez tiédir la tasse et prenez le temps de la déguster.',
       science: "En infusant du Shou Mei de Fuding, des chercheurs ont observé que la température de l’eau changeait les quantités de caféine, de théanine et de catéchines dans la tasse. Commencez au bas de la plage de température suggérée et goûtez comment les feuilles s’expriment au fil des infusions.",
