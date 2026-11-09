@@ -12,6 +12,39 @@
 .quiz-buy{background:#19271f;color:white;padding:15px 22px;border:0;font-weight:700}
 .quiz-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 @media(max-width:650px){.quiz-result-heading{padding:18px}.quiz-result-icon{width:55px;height:55px;font-size:31px}.quiz-match strong{font-size:29px}.quiz-real-tea{font-size:20px}}
+
+/* Cha & Chi — mountain tea atelier */
+:root{--cha-ochre:#a75d31;--cha-rust:#813e28;--cha-ink:#30251e;--cha-parchment:#f7e9d7}
+body{background:#f4e7d6;color:var(--cha-ink)}
+.hero{background:linear-gradient(90deg,rgba(248,231,210,.95),rgba(247,225,203,.72)),url('/images/mountain-ink-landscape.svg') center/cover}
+#ritual.quiz{position:relative;background:linear-gradient(180deg,rgba(248,230,208,.82),rgba(245,226,202,.93) 54%,rgba(250,241,227,.97)),url('/images/mountain-ink-landscape.svg') center top/cover;padding-top:70px;padding-bottom:85px}
+#ritual.quiz>.eyebrow{color:#8c4429;letter-spacing:.2em}
+#ritual.quiz>h2{color:#452a20;font-family:Georgia,serif}
+#ritual .quiz-panel{background:rgba(255,250,241,.92);border:1px solid rgba(137,82,52,.25);box-shadow:0 22px 65px rgba(69,42,25,.12);border-radius:12px;overflow:hidden}
+.quiz-result-heading{background:linear-gradient(120deg,#f1d3b2,#f9ecdb);border-left:4px solid #a75d31}
+.quiz-result-label,.quiz-tea-kicker{color:#914a2b}
+.quiz-result-icon{background:#663b2c;color:#f2d2a7}
+.quiz-match{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:#fff9ee;border:1px solid #ddc2a4;border-radius:12px;box-shadow:0 12px 35px rgba(81,44,23,.08)}
+.quiz-product-visual{position:relative;min-width:0;background:#e8d2b6;overflow:hidden}
+.quiz-product-visual>img{width:100%;height:100%;min-height:430px;object-fit:cover;display:block}
+.quiz-photo-seal{position:absolute;bottom:18px;left:18px;padding:9px 13px;background:rgba(58,38,27,.86);color:#f7e7ce;font-size:10px;letter-spacing:1.8px}
+.quiz-match>div:last-child{padding:28px}
+.quiz-real-tea{color:#8d452c}
+.quiz-photo-thumbs{display:flex;align-items:center;gap:13px;border-top:1px solid #e6d3bc;padding-top:13px;margin-top:15px;color:#795a46;font-size:12px}
+.quiz-photo-thumbs img{width:76px;height:70px;object-fit:cover;border-radius:5px;flex:none}
+.cha-qi-panel{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;background:linear-gradient(120deg,#3b2c27,#75442e);color:#f9e6cb;border-radius:12px;padding:31px;margin:25px 0;box-shadow:0 14px 35px rgba(47,28,21,.17)}
+.cha-qi-symbol{display:grid;place-items:center;width:84px;height:84px;border:1px solid rgba(246,211,160,.55);border-radius:50%;font:53px Georgia,serif;color:#f4c58b}
+.cha-qi-eyebrow{color:#dba873;font-size:11px;font-weight:700;letter-spacing:2px}
+.cha-qi-panel h4{font:clamp(24px,3vw,33px) Georgia,serif;color:#f9e6cb;margin:8px 0 12px}
+.cha-qi-panel strong{color:#f4c58b;font:21px Georgia,serif}
+.cha-qi-panel p{line-height:1.7;margin:12px 0}
+.cha-qi-panel small{color:#e1c7ae;line-height:1.6}
+.quiz-reasons>div,.quiz-report{background:rgba(255,248,237,.9);border-color:#e2c9ad}
+.quiz-report-intro{text-align:center;color:#96512f;font-size:12px;font-weight:700;letter-spacing:2px;margin:26px 0 8px}
+.quiz-report-intro span{font-size:22px;vertical-align:middle;margin-right:8px}
+.quiz-buy{background:#a75d31;border-radius:5px;color:#fff7ed}
+.quiz-buy:hover{background:#7e3d26}
+@media(max-width:750px){.quiz-match{grid-template-columns:1fr}.quiz-product-visual>img{min-height:280px;max-height:390px}.quiz-match>div:last-child{padding:20px}.cha-qi-panel{grid-template-columns:1fr;padding:24px}.cha-qi-symbol{width:65px;height:65px;font-size:40px}}
 </style></head>
 <body><a class="skip" href="#collection">Skip to teas</a><header><nav class="nav"><a class="logo" href="#"><img class="brand-mark" src="/images/cha-chi-logo.png" alt="Cha &amp; Chi" width="570" height="229"></a><div class="links"><a href="#collection" data-i18n="navShop">The collection</a><a href="#ritual" data-i18n="navQuiz">Find your tea</a><a href="#story" data-i18n="navStory">Our philosophy</a><a href="/brewing.html" id="brewNav">Brewing guide</a></div><div class="nav-actions"><button class="smallbtn" id="lang" aria-label="Change language">FR</button><button class="smallbtn" id="cartOpen" aria-label="Open shopping bag"><span data-i18n="bag">Bag</span> <span class="cartcount" id="cartCount">0</span></button></div></nav></header>
 <main><section class="hero"><div class="hero-copy"><div class="eyebrow" data-i18n="heroEyebrow">The Cha & Chi Tea Quiz</div><h1 data-i18n="heroTitle">Find the tea that<br>fits your body type.</h1><p data-i18n="heroText">Inspired by traditional Chinese medicine, this quick quiz matches you with a tea based on how you feel day to day.</p><div class="hero-actions"><a class="cta" href="#ritual" data-i18n="quizCta">Find my tea</a><a class="hero-secondary" href="#collection" data-i18n="navShop">The collection</a></div></div><a class="hero-art" href="/tea.html?tea=jade"><img src="/images/jade-hero.webp" alt="" width="1536" height="1024" fetchpriority="high"><span class="hero-caption"><strong>Jade</strong><span>Shifeng Longjing</span><span aria-hidden="true">↗</span></span></a></section>
