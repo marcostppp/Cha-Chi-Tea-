@@ -11,8 +11,8 @@ const teaPairings = {
         "Aged cheddar and simple crackers make a satisfying savoury pairing."
       ],
       [
-        "Mushroom toast",
-        "A warm, earthy snack that echoes ripe Pu-erh's depth."
+        "Grilled cheese sandwich",
+        "A familiar, savoury comfort food that pairs nicely with the tea's earthy depth."
       ]
     ],
     "fr": [
@@ -25,8 +25,8 @@ const teaPairings = {
         "Un cheddar vieilli et des craquelins pour une pause salée."
       ],
       [
-        "Rôtie aux champignons",
-        "Une collation chaleureuse aux notes terreuses."
+        "Sandwich au fromage grillé",
+        "Un classique salé et réconfortant qui accompagne le caractère terreux du thé."
       ]
     ]
   },
@@ -41,8 +41,8 @@ const teaPairings = {
         "Juicy, delicate fruit complements the soft white tea."
       ],
       [
-        "Oatmeal cookies",
-        "A familiar, lightly sweet snack that won't overwhelm the cup."
+        "Butter cookies",
+        "A simple, buttery cookie that won't overwhelm the cup."
       ]
     ],
     "fr": [
@@ -55,8 +55,8 @@ const teaPairings = {
         "Un fruit juteux et délicat qui accompagne bien ce thé blanc."
       ],
       [
-        "Biscuits à l’avoine",
-        "Une douceur simple qui ne masque pas le thé."
+        "Biscuits au beurre",
+        "Une douceur au beurre qui ne masque pas le thé."
       ]
     ]
   },
@@ -183,8 +183,8 @@ const teaPairings = {
   "jade": {
     "en": [
       [
-        "Fresh strawberries",
-        "Bright fruit complements its clean, springlike character."
+        "Fresh berries",
+        "Fresh berries complement its clean, springlike character."
       ],
       [
         "Avocado toast",
@@ -197,8 +197,8 @@ const teaPairings = {
     ],
     "fr": [
       [
-        "Fraises fraîches",
-        "Le fruit vif accompagne sa fraîcheur printanière."
+        "Petits fruits frais",
+        "Les petits fruits accompagnent sa fraîcheur printanière."
       ],
       [
         "Rôtie à l’avocat",
