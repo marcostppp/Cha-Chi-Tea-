@@ -1,8 +1,8 @@
 const teaPageText = {
   en: {
     collection: 'Collection', bag: 'Bag', language: 'Lire en français', back: 'Back to the collection',
-    gallery: 'Product photos',
-    add: 'Add to bag', added: 'Added to your bag.', origin: 'Where it grows',
+    gallery: 'Product photos', pairings: 'Food & tea pairings', pairingIntro: 'Everyday snacks and foods that complement the flavours of this tea.',
+    add: 'Add to Cart', added: 'Added to your bag.', origin: 'Where it grows',
     history: 'History', fact: 'Did you know?', brewing: 'How to brew it',
     tcm: 'The traditional Chinese medicine view', science: 'The science in the cup',
     links: 'On this page', sources: 'Sources and further reading',
@@ -14,7 +14,7 @@ const teaPageText = {
   },
   fr: {
     collection: 'Collection', bag: 'Panier', language: 'Read in English', back: 'Retour à la collection',
-    gallery: 'Photos du produit',
+    gallery: 'Photos du produit', pairings: 'Accords mets et thé', pairingIntro: 'Des collations et des plats faciles à trouver qui accompagnent les saveurs de ce thé.',
     add: 'Ajouter au panier', added: 'Ajouté à votre panier.', origin: 'Région et producteurs',
     history: 'Histoire', fact: 'Le saviez-vous?', brewing: 'Comment l’infuser',
     tcm: 'Le regard de la médecine traditionnelle chinoise', science: 'La science dans la tasse',
@@ -53,7 +53,7 @@ function renderTea() {
   const price = new Intl.NumberFormat(currentLanguage === 'fr' ? 'fr-CA' : 'en-CA', {
     style: 'currency', currency: 'CAD'
   }).format(product.price_cad);
-  const sections = ['origin', 'history', 'brewing', 'tcm', 'science'];
+  const sections = ['pairings', 'origin', 'history', 'brewing', 'tcm', 'science'];
   const references = [...story.sources, 'tradition', 'caffeine'];
   document.title = `${product.name} · ${copy.type} · Cha & Chi`;
   document.querySelector('meta[name="description"]').content = copy.description;
@@ -87,7 +87,7 @@ function renderTea() {
       <nav class="jump-links" aria-label="${labels.links}">
         ${sections.map(id => `<a href="#${id}">${labels[id]}</a>`).join('')}
       </nav>
-      <div class="reading">
+      <div class="reading"><section id="pairings" class="tea-pairings-section"><div class="eyebrow">CHA & CHI · ${labels.pairings}</div><h2>${labels.pairings}</h2><p>${labels.pairingIntro}</p><div class="pairings-grid">${teaPairings[product.id][currentLanguage].map(([food,why],i)=>`<article class="pairing-item"><span class="pairing-symbol" aria-hidden="true">${['✦','❋','◈'][i]}</span><h3>${food}</h3><p>${why}</p></article>`).join('')}</div></section>
         <section id="origin">
           <h2>${labels.origin}</h2>
           <p><strong>${copy.origin}</strong></p>
