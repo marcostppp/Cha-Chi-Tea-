@@ -344,6 +344,8 @@ const bodyQuestions = [
   ]
 ];
 
+bodyQuestions.splice(12,0,...[["circulation",["Do you often notice the same spot feeling tense or uncomfortable?",["Rarely","Sometimes","Often","Very often"],"recurring discomfort in the same spot"],["Ressentez-vous souvent une tension ou un inconfort au même endroit?",["Rarement","Parfois","Souvent","Très souvent"],"un inconfort qui revient au même endroit"]],["sensitivity",["Are you sensitive to tea or other drinks?",["Not usually","Sometimes caffeine bothers me","I react to several drinks or ingredients","I have known allergies or strong reactions"],"sensitivities to drinks or ingredients"],["Êtes-vous sensible au thé ou à d’autres boissons?",["Pas habituellement","La caféine me dérange parfois","Je réagis à plusieurs boissons ou ingrédients","J’ai des allergies connues ou de fortes réactions"],"une sensibilité aux boissons ou ingrédients"]]]);
+
 const temperatureScores = [-3, -2, -1, 0, 1, 2, 3];
 const flavourPatterns = ['cold', 'dry', 'dry', 'energy', 'heavy', 'heat', 'tension', 'balanced', null];
 
@@ -351,7 +353,7 @@ const quizCopy = {
   en: {
     intro: 'Think of a typical day.', start: 'Start the quiz',
     framing: 'Answer based on how you’ve usually felt over the past month.',
-    framework: 'Why seven tea profiles?', frameworkDetail: 'The traditional constitution framework describes nine types. Our tea quiz pairs six tendencies and a steady-rhythm result with our seven teas. Blood stasis and special sensitivity are part of the wider tradition.',
+    framework: 'Why seven tea profiles?', frameworkDetail: 'Traditional Chinese medicine describes nine constitutions. This short discovery quiz explores overlapping tendencies, then considers flavour and caffeine preferences to recommend one of our seven teas. It is not a clinical constitution assessment.',
     warmClue: 'often feeling warm indoors', coldClue: 'often feeling chilly indoors',
     dampNote: 'In TCM, daytime warmth with an oily or shiny face can also point toward a damp-heat tendency. Here it’s an extra clue about your warmth pattern.',
     note: 'Your rhythm can change with the season or your routine. Notice how the tea feels to you and revisit your answers as your habits change.',
@@ -359,7 +361,7 @@ const quizCopy = {
     clues: 'What tipped the match', fit: 'Why this tea fits your pattern', taste: 'What’s in the cup',
     picked: 'Your tasting pick', tasteMatch: 'That’s also part of this tea’s tasting profile.',
     tasteOther: 'This match gives you a different flavour to explore. It was chosen from your day-to-day patterns.',
-    result: 'Your closest tea ritual', mixed: 'More than one pattern came through',
+    result: 'Your tea and constitution-inspired profile', mixed: 'More than one pattern came through',
     mixedSummary: 'Your strongest patterns tied, so Stillpoint is a neutral tasting starting point. Your answers can fit more than one traditional pattern.',
     tradition: 'The TCM pairing', science: 'The science in the cup',
     choice: 'Explore', full: 'Read your full report', food: 'Food to try', routine: 'Everyday habits',
@@ -375,7 +377,7 @@ const quizCopy = {
   fr: {
     intro: 'Pensez à une journée ordinaire.', start: 'Commencer le quiz',
     framing: 'Répondez selon la façon dont vous vous êtes senti la plupart du temps au cours du dernier mois.',
-    framework: 'Pourquoi sept profils de thé?', frameworkDetail: 'Le cadre traditionnel des constitutions décrit neuf types. Notre quiz associe six tendances et un profil de rythme stable à nos sept thés. La stase de sang et la sensibilité particulière font partie du cadre traditionnel plus large.',
+    framework: 'Pourquoi sept profils de thé?', frameworkDetail: 'La médecine traditionnelle chinoise décrit neuf constitutions. Ce court quiz explore plusieurs tendances qui peuvent se chevaucher, puis tient compte des saveurs et de la caféine pour recommander un de nos sept thés. Ce n’est pas une évaluation clinique.',
     warmClue: 'une sensation fréquente de chaleur à l’intérieur', coldClue: 'une sensation fréquente de froid à l’intérieur',
     dampNote: 'En MTC, la chaleur en journée accompagnée d’un visage gras ou brillant peut aussi évoquer une tendance à l’humidité-chaleur. C’est ici un indice de plus pour nuancer votre profil.',
     note: 'Votre rythme peut changer avec les saisons ou votre routine. Observez comment vous vous sentez avec ce thé et revenez au quiz quand vos habitudes changent.',
@@ -383,7 +385,7 @@ const quizCopy = {
     clues: 'Ce qui a fait pencher la balance', fit: 'Pourquoi ce thé correspond à votre tendance', taste: 'À quoi vous attendre en tasse',
     picked: 'Votre choix de saveur', tasteMatch: 'Cette note fait aussi partie du profil de ce thé.',
     tasteOther: 'Ce thé vous fait découvrir un autre profil de saveur. Il a été choisi selon vos habitudes au quotidien.',
-    result: 'Votre rituel de thé', mixed: 'Plusieurs tendances ressortent',
+    result: 'Votre thé et votre profil inspiré des constitutions', mixed: 'Plusieurs tendances ressortent',
     mixedSummary: 'Vos tendances les plus fortes sont à égalité. Stillpoint est un point de départ neutre pour la dégustation. Vos réponses peuvent correspondre à plusieurs tendances.',
     tradition: 'Le jumelage en MTC', science: 'La science dans la tasse',
     choice: 'Découvrir', full: 'Lire votre rapport complet', food: 'Idées pour vos repas', routine: 'Habitudes au quotidien',
@@ -404,38 +406,53 @@ let quizAnswers = [];
 let reportStatus = null;
 
 function matchQuiz(answers) {
-  const patterns = new Map();
-  const addSignal = (pattern, value) => {
-    const scores = patterns.get(pattern) || [];
-    scores.push(value);
-    patterns.set(pattern, scores);
+  // Tea discovery heuristics inspired by the nine-constitution framework.
+  // These are independent tendencies, NOT CCMQ scores or clinical diagnoses.
+  const a = i => Number.isInteger(answers[i]) ? answers[i] : 0;
+  const max = (v, lo = 0) => Math.max(lo, v);
+  const temp = temperatureScores[a(3)] ?? 0;
+  const cold = max(-temp) + max(2-a(10)) + (a(0)>=2 ? 0.6 : 0);
+  const warmth = max(temp) + a(5) + max(a(10)-2) + max(a(11)-2);
+  const dryness = a(4) + max(2-a(8)) + max(2-a(11));
+  const damp = a(2) + a(7);
+  const oily = max(a(8)-2);
+  const sweat = max(a(11)-2);
+  const tension = a(1) + a(9);
+  const energy = a(0) + a(6);
+  const sensitivity = a(13);
+  const scores = {
+    balanced: 0,
+    energy: energy * 0.85,
+    cold: cold * 0.9 + energy * 0.15,
+    dry: Math.min(dryness,warmth) * 1.1 + dryness * 0.35,
+    heavy: damp * 0.85 + oily * 0.3,
+    dampheat: Math.min(warmth,damp + oily + sweat) * 0.95 + oily * 0.65,
+    tension: tension * 0.95,
+    stasis: a(12) >= 2 ? a(12) * 0.65 : 0,
+    sensitive: sensitivity >= 2 ? sensitivity * 1.8 : 0
   };
-  let dampClue = false;
-  bodyQuestions.forEach(([pattern], index) => {
-    if (pattern === 'flavour' || pattern === 'caffeine') return;
-    if (pattern === 'temperature') {
-      const temperature = temperatureScores[answers[index]] ?? 0;
-      addSignal('cold', Math.max(0, -temperature));
-      addSignal('heat', Math.max(0, temperature));
-    } else if (pattern === 'heatSkin') {
-      dampClue = answers[index] >= 3;
-      addSignal('dry', Math.max(0, 2 - answers[index]));
-      if (answers[index] === 4) addSignal('heat', 2);
-    } else if (pattern === 'cold') {
-      addSignal('cold', Math.max(0, 2 - answers[index]));
-      addSignal('heat', Math.max(0, answers[index] - 2));
-    } else if (index === 11) {
-      addSignal('dry', Math.max(0, 2 - answers[index]));
-      addSignal('heat', Math.max(0, answers[index] - 2));
-    } else {
-      addSignal(pattern, answers[index]);
-    }
-  });
-  const candidates = [...patterns].filter(([, values]) => values.filter(v => v > 0).length >= 2 && values.reduce((a,b)=>a+b,0) >= 4)
-    .map(([pattern, values]) => ({ pattern, score: values.reduce((a,b)=>a+b,0) }))
-    .sort((a, b) => b.score - a.score);
-  const mixed = candidates.length > 1 && candidates[0].score === candidates[1].score;
-  return { key: !mixed && candidates.length ? candidates[0].pattern : 'balanced', mixed, dampClue };
+  // Avoid labelling blood stasis from one nonspecific question.
+  // Sensitivity is a precaution flag, not a diagnosis.
+  const ranked = Object.entries(scores).filter(([key,value]) => key !== 'balanced' && key !== 'stasis' && key !== 'sensitive' && value >= 3.2)
+    .sort((x,y)=>y[1]-x[1]);
+  const primary = ranked[0]?.[0] || 'balanced';
+  const secondary = ranked[1] && ranked[1][1] >= 3.2 && ranked[1][1] >= ranked[0][1]*0.72 ? ranked[1][0] : null;
+  const sensitivityFlag = sensitivity >= 2 || a(15) >= 1;
+  // Keep constitution and tea recommendation separate.
+  const baseTea = {balanced:'stillpoint',energy:'pivot',cold:'ground',dry:'mist',heavy:'ember',dampheat:'jade',tension:'vital'};
+  const preferredFlavour = a(14);
+  const flavourTea = ['ground','vital','mist','pivot','ember','jade','vital','stillpoint',null][preferredFlavour];
+  const compatible = {
+    balanced:['stillpoint','pivot','mist','vital','jade'],
+    energy:['pivot','ground','stillpoint','mist'],
+    cold:['ground','ember','pivot'],
+    dry:['mist','stillpoint','pivot','jade'],
+    heavy:['ember','ground','pivot'],
+    dampheat:['jade','mist','stillpoint','pivot'],
+    tension:['vital','stillpoint','mist','pivot']
+  };
+  const tea = flavourTea && compatible[primary].includes(flavourTea) ? flavourTea : baseTea[primary];
+  return {key:primary, secondary, scores, tea, mixed:!!secondary, dampClue:oily>0 && warmth>2, sensitivityFlag, cautionFlag:a(15)===2};
 }
 
 function renderQuiz(focus = false) {
@@ -454,45 +471,51 @@ function renderQuiz(focus = false) {
   } else {
     const result = matchQuiz(quizAnswers);
     const profile = quizProfiles[result.key];
+    const selectedTea = result.tea;
     const details = profile[lang];
     const caffeine = quizAnswers.at(-1);
     const caution = caffeine === 2 ? copy.avoid : caffeine === 1 ? copy.sensitive : '';
-    const heading = result.mixed ? copy.mixed : details.title;
+    const heading = details.title;
+    const secondaryDetails = result.secondary ? quizProfiles[result.secondary][lang] : null;
+    const profileLabels = lang === 'fr' ? {balanced:'Équilibré',energy:'Énergie basse',cold:'Froid et lenteur',dry:'Chaleur et sécheresse',heavy:'Lourdeur et humidité',dampheat:'Chaleur et humidité',tension:'Tension et agitation'} : {balanced:'Balanced & Steady',energy:'Low Energy',cold:'Cold & Sluggish',dry:'Dry & Warm',heavy:'Heavy & Sluggish',dampheat:'Hot & Humid',tension:'Tense & Restless'};
     const teaNames = {ember:'2019 Shou Pu-erh',mist:'Aged Fuding Shou Mei White Tea',stillpoint:'Ali Shan Qing Xin Green Oolong',ground:'Fengqing Dianhong Black Tea',vital:'Mi Lan Xiang Dancong Oolong',pivot:'Mengding Huangya Yellow Tea',jade:'Shifeng Longjing Green Tea'};
-    const teaType = teaNames[profile.tea] || profile.name;
-    const qi = chaQiDescriptions[profile.tea];
+    const teaType = teaNames[selectedTea] || profile.name;
+    const qi = chaQiDescriptions[selectedTea];
     const qiTitle = lang === 'fr' ? qi[2] : qi[0];
     const qiText = lang === 'fr' ? qi[3] : qi[1];
-    const clues = bodyQuestions.flatMap(([pattern, en, fr], questionIndex) =>
-      pattern === result.key && quizAnswers[questionIndex] > 0 && (lang === 'fr' ? fr : en)[2] ? [(lang === 'fr' ? fr : en)[2]] : []
-    );
+    const clues = [];
     if (result.key === 'heat') clues.unshift(copy.warmClue);
     if (result.key === 'cold') clues.unshift(copy.coldClue);
     const flavourIndex = quizAnswers.at(-2);
     const flavour = flavourPatterns[flavourIndex];
+    const chosen = Object.values(quizProfiles).find(p=>p.tea===selectedTea) || quizProfiles.balanced;
+    const matchReason = selectedTea === profile.tea ? details.fit : (lang === 'fr' ? 'Votre profil a guidé la sélection, et vos goûts ont orienté le choix vers ce thé. Son caractère et ses arômes correspondent à vos préférences.' : 'Your body-pattern tendencies guided the shortlist, while your flavour preferences helped select this tea. Its character and aromas make it a personal tasting match.');
     quizPanel.innerHTML = `
       <div class="eyebrow">${copy.result}</div>
       <div class="quiz-result-heading"><div><span class="quiz-result-label">${lang === "fr" ? "VOTRE PROFIL INSPIRÉ DE LA MTC" : "YOUR TCM-INSPIRED BODY PATTERN"}</span><h3 tabindex="-1">${heading}</h3></div><div class="quiz-result-icon" aria-hidden="true">茶</div></div>
-      ${result.mixed ? '' : `<div class="meta">${details.term}</div>`}
-      <p>${result.mixed ? copy.mixedSummary : details.summary}</p>
-      ${clues.length ? `<p class="quiz-clues"><b>${copy.clues}</b> · ${new Intl.ListFormat(lang).format(clues)}.</p>` : ''}
+      <div class="meta">${details.term}</div>
+      <p>${details.summary}</p>
+      ${secondaryDetails ? `<p class="quiz-secondary"><b>${lang === 'fr' ? 'Votre tendance secondaire' : 'Your secondary tendency'}:</b> ${profileLabels[result.secondary]} · ${secondaryDetails.term}</p>` : ''}
+      <div class="quiz-pattern-bars">${Object.entries(result.scores).filter(([key])=>!['stasis','sensitive','balanced'].includes(key)).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([key,value])=>`<div class="quiz-pattern-line"><span>${profileLabels[key]}</span><div class="quiz-pattern-track"><i style="width:${Math.round(Math.min(100,value/9*100))}%"></i></div></div>`).join('')}</div>
+      <p class="notice">${lang === 'fr' ? 'Ces barres illustrent des tendances relatives dans ce quiz, pas des scores médicaux ni une mesure clinique.' : 'These bars compare tendencies within this quiz; they are not medical scores or a clinical measurement.'}</p>
       <div class="quiz-match">
-        <div class="quiz-product-visual"><img src="/images/${profile.tea}-hero.webp" alt="${teaType}" width="1536" height="1024"><span class="quiz-photo-seal">CHA & CHI · ${lang === "fr" ? "THÉ DE MONTAGNE" : "MOUNTAIN TEA"}</span></div>
-        <div><div class="quiz-tea-kicker">${lang === "fr" ? "VOTRE THÉ RECOMMANDÉ" : "YOUR RECOMMENDED TEA"}</div><strong>${profile.name}</strong><h4 class="quiz-real-tea">${teaType}</h4>
-        <p><b>${copy.fit}</b> · ${details.fit}</p>
-        <p><b>${copy.taste}</b> · ${details.taste}</p>
-        <div class="quiz-photo-thumbs"><img src="/images/${profile.tea}-leaves.webp" alt="${lang === "fr" ? "Feuilles de thé" : "Tea leaves"}" loading="lazy"><span>${lang === "fr" ? "Vraies feuilles de notre collection · 50 g / 30 $ CA" : "Real leaves from our collection · 50 g / $30 CAD"}</span></div>
-        ${flavour ? `<p><b>${copy.picked}</b> · ${bodyQuestions.at(-2)[index][1][flavourIndex]}. ${flavour === result.key ? copy.tasteMatch : copy.tasteOther}</p>` : ''}</div>
+        <div class="quiz-product-visual"><img src="/images/${selectedTea}-hero.webp" alt="${teaType}" width="1536" height="1024"><span class="quiz-photo-seal">CHA & CHI · ${lang === "fr" ? "THÉ DE MONTAGNE" : "MOUNTAIN TEA"}</span></div>
+        <div><div class="quiz-tea-kicker">${lang === "fr" ? "VOTRE THÉ RECOMMANDÉ" : "YOUR RECOMMENDED TEA"}</div><strong>${chosen.name}</strong><h4 class="quiz-real-tea">${teaType}</h4>
+        <p><b>${copy.fit}</b> · ${matchReason}</p>
+        <p><b>${copy.taste}</b> · ${chosen[lang].taste}</p>
+        <div class="quiz-photo-thumbs"><img src="/images/${selectedTea}-leaves.webp" alt="${lang === "fr" ? "Feuilles de thé" : "Tea leaves"}" loading="lazy"><span>${lang === "fr" ? "Vraies feuilles de notre collection · 50 g / 30 $ CA" : "Real leaves from our collection · 50 g / $30 CAD"}</span></div>
+        ${flavour ? `<p><b>${copy.picked}</b> · ${bodyQuestions.at(-2)[index][1][flavourIndex]}. ${selectedTea === result.tea ? copy.tasteMatch : copy.tasteOther}</p>` : ''}</div>
       </div>
       <section class="cha-qi-panel"><div class="cha-qi-symbol" aria-hidden="true">氣</div><div><div class="cha-qi-eyebrow">${lang === "fr" ? "L’ESPRIT DU THÉ" : "THE SPIRIT OF THE TEA"}</div><h4>${lang === "fr" ? "Le cha qi — l’énergie du thé" : "Cha qi — the energy of tea"}</h4><strong>${qiTitle}</strong><p>${qiText}</p><small>${lang === "fr" ? "Le cha qi décrit l’expérience sensible et traditionnelle d’un thé : son caractère, son atmosphère et la façon dont on le ressent. Chaque personne peut le vivre différemment." : "Cha qi is a traditional way of describing a tea’s felt character, atmosphere and presence. The experience is personal and may differ from one person to another."}</small></div></section>
       <div class="quiz-reasons">
-        <div><h4>${copy.tradition}</h4><p>${details.tradition}</p>${result.key === 'heat' && result.dampClue ? `<p>${copy.dampNote}</p>` : ''}</div>
-        <div><h4>${copy.science}</h4><p>${details.science}</p></div>
+        <div><h4>${copy.tradition}</h4><p>${chosen[lang].tradition}</p>${result.key === 'heat' && result.dampClue ? `<p>${copy.dampNote}</p>` : ''}</div>
+        <div><h4>${copy.science}</h4><p>${chosen[lang].science}</p></div>
       </div>
+      ${result.sensitivityFlag ? `<p class="quiz-caution">${lang === 'fr' ? 'Vous avez signalé une sensibilité : vérifiez les ingrédients et évitez le thé en cas de réaction connue. Le quiz ne peut pas évaluer les allergies.' : 'You reported sensitivities: check ingredients and avoid tea if you have a known reaction. This quiz cannot assess allergies.'}</p>` : ''}
       ${caution ? `<p class="quiz-caution">${caution}</p>` : ''}
       <div class="quiz-actions">
-        <a class="cta" href="/tea.html?tea=${profile.tea}">${lang === 'fr' ? 'Voir le thé' : 'View tea details'} · ${teaType} ↗</a>
-        ${caffeine === 2 ? '' : `<button class="quiz-buy" type="button" data-add="${profile.tea}">${t('add')}</button>`}
+        <a class="cta" href="/tea.html?tea=${selectedTea}">${lang === 'fr' ? 'Voir le thé' : 'View tea details'} · ${teaType} ↗</a>
+        ${caffeine === 2 || quizAnswers[13] === 3 ? '' : `<button class="quiz-buy" type="button" data-add="${selectedTea}">${t('add')}</button>`}
       </div>
       <section class="tea-pairings-panel"><div class="quiz-tea-kicker">${lang === 'fr' ? 'À SAVOURER ENSEMBLE' : 'SOMETHING GOOD ON THE SIDE'}</div><h4>${lang === 'fr' ? 'Avec quoi déguster ce thé?' : 'What to eat with your tea'}</h4><p>${lang === 'fr' ? 'Quelques accords gourmands, simples à essayer à la maison.' : 'Easy, delicious pairings you can try at home.'}</p><div class="tea-pairings-grid">${teaPairings[profile.tea][lang].map(([food,why],i)=>`<div class="tea-pairing-card"><span aria-hidden="true">${['✦','❋','◈'][i]}</span><strong>${food}</strong><p>${why}</p></div>`).join('')}</div></section>
       <p class="notice">${copy.note}</p>
