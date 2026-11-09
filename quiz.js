@@ -517,7 +517,7 @@ function renderQuiz(focus = false) {
         <a class="cta" href="/tea.html?tea=${selectedTea}">${lang === 'fr' ? 'Voir le thé' : 'View tea details'} · ${teaType} ↗</a>
         ${caffeine === 2 || quizAnswers[13] === 3 ? '' : `<button class="quiz-buy" type="button" data-add="${selectedTea}">${t('add')}</button>`}
       </div>
-      <section class="tea-pairings-panel"><div class="quiz-tea-kicker">${lang === 'fr' ? 'À SAVOURER ENSEMBLE' : 'SOMETHING GOOD ON THE SIDE'}</div><h4>${lang === 'fr' ? 'Avec quoi déguster ce thé?' : 'What to eat with your tea'}</h4><p>${lang === 'fr' ? 'Quelques accords gourmands, simples à essayer à la maison.' : 'Easy, delicious pairings you can try at home.'}</p><div class="tea-pairings-grid">${teaPairings[profile.tea][lang].map(([food,why],i)=>`<div class="tea-pairing-card"><span aria-hidden="true">${['✦','❋','◈'][i]}</span><strong>${food}</strong><p>${why}</p></div>`).join('')}</div></section>
+      <section class="tea-pairings-panel"><div class="quiz-tea-kicker">${lang === 'fr' ? 'À SAVOURER ENSEMBLE' : 'SOMETHING GOOD ON THE SIDE'}</div><h4>${lang === 'fr' ? 'Avec quoi déguster ce thé?' : 'What to eat with your tea'}</h4><p>${lang === 'fr' ? 'Quelques accords gourmands, simples à essayer à la maison.' : 'Easy, delicious pairings you can try at home.'}</p><div class="tea-pairings-grid">${teaPairings[selectedTea][lang].map(([food,why],i)=>`<div class="tea-pairing-card"><span aria-hidden="true">${['✦','❋','◈'][i]}</span><strong>${food}</strong><p>${why}</p></div>`).join('')}</div></section>
       <p class="notice">${copy.note}</p>
       <div data-report-slot></div>
       <div class="quiz-nav"><button class="textbtn" type="button" data-quiz-action="restart">${t('restart')}</button></div>`;
