@@ -1,3 +1,4 @@
+const chaQiDescriptions = {"ember":["Deep & grounding","A slow, earthy presence—like warm stones after rain. Traditionally appreciated as a settling, unhurried cup.","Profond et ancré","Une présence lente et terreuse, comme des pierres chaudes après la pluie. Une tasse traditionnellement appréciée pour son caractère posé."],"mist":["Soft & restorative","Gentle, spacious and mellow, like mist lifting over quiet hills. A tea for slowing the pace and making room to breathe.","Doux et enveloppant","Une sensation douce et ample, comme la brume qui se lève sur les collines. Un thé pour ralentir et prendre le temps de respirer."],"stillpoint":["Clear & serene","An airy mountain feeling: lifted, graceful and quietly focused, like cool mist among high pines.","Clair et serein","Une impression aérienne de montagne : légère, élégante et paisible, comme la brume fraîche entre les pins."],"ground":["Warm & steady","A glowing hearth in a cup: rich, comforting and quietly energizing, with a reassuring sense of warmth.","Chaud et stable","Un foyer chaleureux dans la tasse : riche, réconfortant et doucement tonifiant."],"vital":["Bright & expansive","A fragrant breeze through an orchard: vivid, rising and expressive, with a lively, unfolding presence.","Vif et expansif","Une brise parfumée dans un verger : vive, ascendante et expressive, avec une présence qui se déploie."],"pivot":["Centered & gentle","A golden pause between movement and stillness: smooth, composed and quietly uplifting.","Centré et délicat","Une pause dorée entre le mouvement et le calme : douce, posée et subtilement vivifiante."],"jade":["Fresh & awakening","The first green light of spring: crisp, open and bright, like morning air above a mountain garden.","Frais et éveillant","La première lumière verte du printemps : vive et lumineuse, comme l’air du matin dans un jardin de montagne."]};
 const bodyQuestions = [
   [
     "energy",
@@ -459,6 +460,9 @@ function renderQuiz(focus = false) {
     const heading = result.mixed ? copy.mixed : details.title;
     const teaNames = {ember:'2019 Shou Pu-erh',mist:'Aged Fuding Shou Mei White Tea',stillpoint:'Ali Shan Qing Xin Green Oolong',ground:'Fengqing Dianhong Black Tea',vital:'Mi Lan Xiang Dancong Oolong',pivot:'Mengding Huangya Yellow Tea',jade:'Shifeng Longjing Green Tea'};
     const teaType = teaNames[profile.tea] || profile.name;
+    const qi = chaQiDescriptions[profile.tea];
+    const qiTitle = lang === 'fr' ? qi[2] : qi[0];
+    const qiText = lang === 'fr' ? qi[3] : qi[1];
     const clues = bodyQuestions.flatMap(([pattern, en, fr], questionIndex) =>
       pattern === result.key && quizAnswers[questionIndex] > 0 && (lang === 'fr' ? fr : en)[2] ? [(lang === 'fr' ? fr : en)[2]] : []
     );
@@ -473,12 +477,14 @@ function renderQuiz(focus = false) {
       <p>${result.mixed ? copy.mixedSummary : details.summary}</p>
       ${clues.length ? `<p class="quiz-clues"><b>${copy.clues}</b> · ${new Intl.ListFormat(lang).format(clues)}.</p>` : ''}
       <div class="quiz-match">
-        <img src="/images/${profile.tea}-hero.webp" alt="" width="1536" height="1024">
+        <div class="quiz-product-visual"><img src="/images/${profile.tea}-hero.webp" alt="${teaType}" width="1536" height="1024"><span class="quiz-photo-seal">CHA & CHI · ${lang === "fr" ? "THÉ DE MONTAGNE" : "MOUNTAIN TEA"}</span></div>
         <div><div class="quiz-tea-kicker">${lang === "fr" ? "VOTRE THÉ RECOMMANDÉ" : "YOUR RECOMMENDED TEA"}</div><strong>${profile.name}</strong><h4 class="quiz-real-tea">${teaType}</h4>
         <p><b>${copy.fit}</b> · ${details.fit}</p>
         <p><b>${copy.taste}</b> · ${details.taste}</p>
+        <div class="quiz-photo-thumbs"><img src="/images/${profile.tea}-leaves.webp" alt="${lang === "fr" ? "Feuilles de thé" : "Tea leaves"}" loading="lazy"><span>${lang === "fr" ? "Vraies feuilles de notre collection · 50 g / 30 $ CA" : "Real leaves from our collection · 50 g / $30 CAD"}</span></div>
         ${flavour ? `<p><b>${copy.picked}</b> · ${bodyQuestions.at(-2)[index][1][flavourIndex]}. ${flavour === result.key ? copy.tasteMatch : copy.tasteOther}</p>` : ''}</div>
       </div>
+      <section class="cha-qi-panel"><div class="cha-qi-symbol" aria-hidden="true">氣</div><div><div class="cha-qi-eyebrow">${lang === "fr" ? "L’ESPRIT DU THÉ" : "THE SPIRIT OF THE TEA"}</div><h4>${lang === "fr" ? "Le cha qi — l’énergie du thé" : "Cha qi — the energy of tea"}</h4><strong>${qiTitle}</strong><p>${qiText}</p><small>${lang === "fr" ? "Le cha qi décrit l’expérience sensible et traditionnelle d’un thé : son caractère, son atmosphère et la façon dont on le ressent. Chaque personne peut le vivre différemment." : "Cha qi is a traditional way of describing a tea’s felt character, atmosphere and presence. The experience is personal and may differ from one person to another."}</small></div></section>
       <div class="quiz-reasons">
         <div><h4>${copy.tradition}</h4><p>${details.tradition}</p>${result.key === 'heat' && result.dampClue ? `<p>${copy.dampNote}</p>` : ''}</div>
         <div><h4>${copy.science}</h4><p>${details.science}</p></div>
@@ -488,6 +494,7 @@ function renderQuiz(focus = false) {
         <a class="cta" href="/tea.html?tea=${profile.tea}">${lang === 'fr' ? 'Voir le thé' : 'View tea details'} · ${teaType} ↗</a>
         ${caffeine === 2 ? '' : `<button class="quiz-buy" type="button" data-add="${profile.tea}">${t('add')}</button>`}
       </div>
+      <div class="quiz-report-intro"><span>✦</span> ${lang === "fr" ? "VOTRE CARNET DE THÉ PERSONNALISÉ" : "YOUR PERSONAL TEA JOURNAL"}</div>
       <details class="quiz-report">
         <summary>${copy.full}</summary>
         <p><b>${copy.food}</b> · ${details.food}</p>
