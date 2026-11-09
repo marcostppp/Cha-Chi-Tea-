@@ -1,50 +1,350 @@
 const bodyQuestions = [
-  ['energy',
-    ['The alarm goes off after a typical night. What does the first hour feel like?', ['I find my rhythm pretty quickly', 'Slow at first, then I’m fine', 'I often feel like I’m running on low battery', 'Most mornings it takes real effort to get going'], 'low energy first thing'],
-    ['Le réveil sonne après une nuit habituelle. Comment se passe la première heure?', ['Je trouve mon rythme assez vite', 'Je démarre lentement, puis ça va', 'Je manque souvent d’énergie', 'La plupart du temps, démarrer me demande un vrai effort'], 'peu d’énergie au réveil']],
-  ['tension',
-    ['Your afternoon suddenly gets busy. Where do you feel it?', ['I can usually roll with it', 'My shoulders tighten once in a while', 'I often catch myself clenching my jaw or shoulders', 'My body tenses up almost every time'], 'physical tension during busy stretches'],
-    ['Votre après-midi devient chargé d’un coup. Comment ça se manifeste?', ['En général, je m’adapte bien', 'Mes épaules se crispent de temps en temps', 'Je remarque souvent que je serre la mâchoire ou les épaules', 'Mon corps se crispe presque chaque fois'], 'de la tension physique quand ça se bouscule']],
-  ['heavy',
-    ['An hour after your usual lunch, what’s the scene?', ['I feel comfortable and ready to move on', 'A little sluggish once in a while', 'I often feel heavy enough to slow down', 'Most days I feel weighed down after lunch'], 'heaviness after a usual meal'],
-    ['Une heure après votre dîner habituel, comment vous sentez-vous?', ['À l’aise et prêt à passer à la suite', 'Un peu au ralenti de temps en temps', 'Souvent assez lourd pour ralentir', 'La plupart du temps, j’ai une sensation de lourdeur'], 'une sensation de lourdeur après un repas habituel']],
-  ['temperature',
-    ['Think of a normal day indoors, sitting still in a room others find comfortable. How does your whole body usually feel?', ['Usually cold, even with an extra layer', 'Often chilly', 'A little chilly sometimes', 'Comfortable most of the time', 'A little warm sometimes', 'Often warmer than I’d like', 'Usually hot, even in light clothes'], ''],
-    ['Pensez à une journée ordinaire, assis à l’intérieur dans une pièce où les autres sont à l’aise. Comment vous sentez-vous en général?', ['J’ai généralement froid, même avec un chandail de plus', 'J’ai souvent froid', 'J’ai un peu froid à l’occasion', 'Je suis à l’aise la plupart du temps', 'J’ai un peu chaud à l’occasion', 'J’ai souvent plus chaud que je le voudrais', 'J’ai généralement chaud, même en vêtements légers'], '']],
-  ['dry',
-    ['A long conversation or a busy afternoon. How does your mouth or throat feel?', ['Usually comfortable', 'Dry once in a while', 'Often dry enough that I notice', 'Dry most days, even outside those moments'], 'a dry mouth or throat'],
-    ['Après une longue conversation ou un après-midi chargé, comment vont votre bouche et votre gorge?', ['En général, ça va bien', 'Un peu sèches de temps en temps', 'Souvent assez sèches pour que je le remarque', 'Sèches la plupart des jours, même en dehors de ces moments'], 'la bouche ou la gorge sèche']],
-  ['heat',
-    ['When you feel too warm indoors, what happens after you’ve been sitting still for a few minutes in light clothes?', ['I rarely get too warm indoors', 'I usually cool off within a few minutes', 'I often stay warm even after resting for a bit', 'I can feel hot for long stretches, even at rest'], 'heat that lingers after you settle down'],
-    ['Quand vous avez trop chaud à l’intérieur, que se passe-t-il après quelques minutes au repos, en vêtements légers?', ['J’ai rarement trop chaud à l’intérieur', 'Je me rafraîchis généralement en quelques minutes', 'J’ai souvent encore chaud après un moment au repos', 'Je peux avoir chaud longtemps, même au repos'], 'une chaleur qui persiste au repos']],
-  ['energy',
-    ['After your usual errands, walk, or workday, how much is left in the tank?', ['Enough for whatever’s next', 'I need a short pause sometimes', 'I often need extra time to recharge', 'Most days I’m spent after ordinary activity'], 'needing extra recovery after everyday activity'],
-    ['Après vos courses, votre marche ou votre journée de travail habituelle, combien d’énergie vous reste-t-il?', ['Assez pour ce qui vient ensuite', 'J’ai parfois besoin d’une petite pause', 'J’ai souvent besoin de plus de temps pour récupérer', 'La plupart du temps, une activité ordinaire m’épuise'], 'un besoin de récupérer après les activités courantes']],
-  ['heavy',
-    ['Think about the rest of the day. Does that weighed-down feeling follow you?', ['Rarely, if ever', 'Sometimes, mostly after a big meal', 'Often, even outside meals', 'Most days, including on quieter days'], 'a weighed-down feeling beyond mealtimes'],
-    ['Pensez au reste de la journée. Est-ce que cette sensation de lourdeur vous suit?', ['Rarement, voire jamais', 'Parfois, surtout après un gros repas', 'Souvent, même en dehors des repas', 'La plupart du temps, même les journées tranquilles'], 'une sensation de lourdeur en dehors des repas']],
-  ['heatSkin',
-    ['When you feel warm during the day, what do you notice about the skin on your face, especially around your nose or forehead?', ['Nothing in particular', 'It feels oily or looks shiny once in a while', 'It often feels oily or looks shiny', 'It feels oily or looks shiny on most warm days'], ''],
-    ['Quand vous avez chaud le jour, que remarquez-vous sur votre visage, surtout autour du nez ou sur le front?', ['Rien de particulier', 'Ma peau est grasse ou brillante de temps en temps', 'Ma peau est souvent grasse ou brillante', 'Ma peau est grasse ou brillante la plupart des jours où j’ai chaud'], '']],
-  ['tension',
-    ['The day is done, and you finally have a quiet moment. What happens next?', ['I switch off fairly easily', 'Some days I replay things for a while', 'I often feel wired even when I’m tired', 'Most evenings I have trouble switching off'], 'difficulty switching off after a demanding day'],
-    ['La journée est finie et vous avez enfin un moment tranquille. Qu’est-ce qui se passe?', ['Je décroche assez facilement', 'Certains jours, je repense à ce qui s’est passé', 'Je me sens souvent sur les nerfs même si je suis fatigué', 'J’ai du mal à décrocher la plupart des soirs'], 'de la difficulté à décrocher après une journée exigeante']],
-  ['cold',
-    ['How do your hands and feet usually feel when you’re sitting still indoors?', ['About right', 'Cool every now and then', 'Noticeably cold quite often', 'Cold on most days'], 'cold hands or feet at rest'],
-    ['Comment se sentent vos mains et vos pieds quand vous êtes assis à l’intérieur?', ['À une température confortable', 'Frais de temps en temps', 'Assez froids régulièrement', 'Froids la plupart des jours'], 'les mains ou les pieds froids au repos']],
-  ['dry',
-    ['Once you’ve settled in for the evening, do your palms or the soles of your feet feel unusually warm even if the room itself feels fine?', ['Rarely or never', 'Some evenings', 'Often enough that I notice', 'Most evenings'], 'unusually warm palms or soles in the evening'],
-    ['Une fois installé pour la soirée, avez-vous les paumes ou la plante des pieds particulièrement chaudes même si la pièce est confortable?', ['Rarement ou jamais', 'Certains soirs', 'Assez souvent pour le remarquer', 'La plupart des soirs'], 'les paumes ou la plante des pieds particulièrement chaudes en soirée']],
-  ['flavour',
-    ['Pick the first thing you’d reach for on a tasting table.', ['Toasted bread or malt', 'Dried fruit or a soft sweetness', 'Toasted nuts or grains', 'Something earthy and deep', 'Fresh greens or chestnut', 'Flowers or honey', 'Something soft and silky', 'Surprise me'], ''],
-    ['Sur une table de dégustation, qu’est-ce qui vous attire en premier?', ['Du pain grillé ou du malt', 'Des fruits séchés ou une douceur légère', 'Des noix ou des grains grillés', 'Quelque chose de profond et terreux', 'Des notes végétales ou de châtaigne', 'Des fleurs ou du miel', 'Quelque chose de doux et soyeux', 'Surprenez-moi'], '']],
-  ['caffeine',
-    ['What happens when you have a caffeinated drink?', ['I usually feel fine', 'I can get jittery or sleep poorly', 'I avoid caffeine'], ''],
-    ['Comment réagissez-vous aux boissons caféinées?', ['Ça se passe généralement bien', 'Je peux être nerveux ou mal dormir', 'J’évite la caféine'], '']]
+  [
+    "energy",
+    [
+      "How is your energy most days?",
+      [
+        "Good most of the day",
+        "A little low in the morning",
+        "I get tired pretty easily",
+        "I'm tired most of the time"
+      ],
+      "your energy level"
+    ],
+    [
+      "Comment est votre énergie en général?",
+      [
+        "Bonne presque toute la journée",
+        "Un peu basse le matin",
+        "Je me fatigue assez facilement",
+        "Je suis fatigué la plupart du temps"
+      ],
+      "votre niveau d’énergie"
+    ]
+  ],
+  [
+    "tension",
+    [
+      "How do you handle stress?",
+      [
+        "I stay pretty relaxed",
+        "I get tense sometimes",
+        "I often feel stressed or tense",
+        "It's hard for me to relax"
+      ],
+      "feeling tense or stressed"
+    ],
+    [
+      "Comment réagissez-vous au stress?",
+      [
+        "Je reste assez détendu",
+        "Je suis parfois tendu",
+        "Je suis souvent stressé ou tendu",
+        "J’ai du mal à me détendre"
+      ],
+      "le stress ou la tension"
+    ]
+  ],
+  [
+    "heavy",
+    [
+      "How do you usually feel after eating?",
+      [
+        "Comfortable",
+        "A little full sometimes",
+        "Often heavy or bloated",
+        "Very heavy or sluggish"
+      ],
+      "feeling heavy after meals"
+    ],
+    [
+      "Comment vous sentez-vous après un repas?",
+      [
+        "Bien",
+        "Parfois un peu plein",
+        "Souvent lourd ou ballonné",
+        "Très lourd ou au ralenti"
+      ],
+      "la lourdeur après les repas"
+    ]
+  ],
+  [
+    "temperature",
+    [
+      "Do you usually feel hot or cold?",
+      [
+        "Almost always cold",
+        "Often cold",
+        "Sometimes cold",
+        "Usually comfortable",
+        "Sometimes hot",
+        "Often hot",
+        "Almost always hot"
+      ],
+      ""
+    ],
+    [
+      "Avez-vous généralement chaud ou froid?",
+      [
+        "Presque toujours froid",
+        "Souvent froid",
+        "Parfois froid",
+        "Généralement bien",
+        "Parfois chaud",
+        "Souvent chaud",
+        "Presque toujours chaud"
+      ],
+      ""
+    ]
+  ],
+  [
+    "dry",
+    [
+      "Do your mouth or throat often feel dry?",
+      [
+        "Rarely",
+        "Sometimes",
+        "Often",
+        "Almost every day"
+      ],
+      "dry mouth or throat"
+    ],
+    [
+      "Avez-vous souvent la bouche ou la gorge sèche?",
+      [
+        "Rarement",
+        "Parfois",
+        "Souvent",
+        "Presque tous les jours"
+      ],
+      "la bouche ou la gorge sèche"
+    ]
+  ],
+  [
+    "heat",
+    [
+      "Do you often feel too hot?",
+      [
+        "Rarely",
+        "Sometimes, especially when active",
+        "Often, even when relaxing",
+        "Almost all the time"
+      ],
+      "feeling too hot"
+    ],
+    [
+      "Avez-vous souvent trop chaud?",
+      [
+        "Rarement",
+        "Parfois, surtout quand je bouge",
+        "Souvent, même au repos",
+        "Presque tout le temps"
+      ],
+      "une sensation fréquente de chaleur"
+    ]
+  ],
+  [
+    "energy",
+    [
+      "How do you feel after a normal day?",
+      [
+        "I still have energy",
+        "I need a little rest",
+        "I'm usually pretty tired",
+        "I'm completely drained"
+      ],
+      "feeling tired after everyday activities"
+    ],
+    [
+      "Comment vous sentez-vous après une journée normale?",
+      [
+        "J’ai encore de l’énergie",
+        "J’ai besoin d’un peu de repos",
+        "Je suis généralement assez fatigué",
+        "Je suis complètement épuisé"
+      ],
+      "la fatigue après une journée normale"
+    ]
+  ],
+  [
+    "heavy",
+    [
+      "Do you often feel heavy or sluggish?",
+      [
+        "Rarely",
+        "Sometimes after a big meal",
+        "Often during the day",
+        "Almost every day"
+      ],
+      "feeling heavy or sluggish"
+    ],
+    [
+      "Vous sentez-vous souvent lourd ou au ralenti?",
+      [
+        "Rarement",
+        "Parfois après un gros repas",
+        "Souvent pendant la journée",
+        "Presque tous les jours"
+      ],
+      "une sensation de lourdeur"
+    ]
+  ],
+  [
+    "heatSkin",
+    [
+      "How is your skin usually?",
+      [
+        "Mostly dry or tight",
+        "A little dry",
+        "Balanced / normal",
+        "A little oily",
+        "Mostly oily or shiny"
+      ],
+      ""
+    ],
+    [
+      "Comment est votre peau en général?",
+      [
+        "Plutôt sèche ou qui tire",
+        "Un peu sèche",
+        "Équilibrée / normale",
+        "Un peu grasse",
+        "Plutôt grasse ou brillante"
+      ],
+      ""
+    ]
+  ],
+  [
+    "tension",
+    [
+      "Is it easy for you to unwind?",
+      [
+        "Yes, usually",
+        "Sometimes I keep thinking about things",
+        "I often feel restless",
+        "I have a hard time relaxing"
+      ],
+      "trouble unwinding"
+    ],
+    [
+      "Arrivez-vous facilement à décrocher?",
+      [
+        "Oui, en général",
+        "Parfois, je pense encore à plein de choses",
+        "Je me sens souvent agité",
+        "J’ai beaucoup de mal à me détendre"
+      ],
+      "de la difficulté à décrocher"
+    ]
+  ],
+  [
+    "cold",
+    [
+      "How do your hands and feet usually feel?",
+      [
+        "Usually cold",
+        "Sometimes cold",
+        "Comfortable",
+        "Sometimes hot",
+        "Often hot or sweaty"
+      ],
+      ""
+    ],
+    [
+      "Comment sont généralement vos mains et vos pieds?",
+      [
+        "Habituellement froids",
+        "Parfois froids",
+        "À une température confortable",
+        "Parfois chauds",
+        "Souvent chauds ou moites"
+      ],
+      ""
+    ]
+  ],
+  [
+    "dry",
+    [
+      "Do you tend to feel dry or sweaty?",
+      [
+        "Mostly dry skin or lips",
+        "Sometimes dry",
+        "Neither / balanced",
+        "I sweat easily",
+        "I'm often hot and sweaty"
+      ],
+      ""
+    ],
+    [
+      "Avez-vous plutôt la peau sèche ou tendance à transpirer?",
+      [
+        "Surtout la peau ou les lèvres sèches",
+        "Parfois un peu sec",
+        "Ni l’un ni l’autre",
+        "Je transpire facilement",
+        "J’ai souvent chaud et je transpire"
+      ],
+      ""
+    ]
+  ],
+  [
+    "flavour",
+    [
+      "Which flavours sound good to you?",
+      [
+        "Bread, grains or something toasty",
+        "Fresh fruit, like peach or pear",
+        "Dried fruit or caramel",
+        "Nuts, like chestnut or almond",
+        "Earthy, like wood or mushrooms",
+        "Fresh and green, like herbs",
+        "Floral or honey-like",
+        "Smooth and mild",
+        "Surprise me"
+      ],
+      ""
+    ],
+    [
+      "Quelles saveurs vous attirent?",
+      [
+        "Pain, céréales ou notes grillées",
+        "Fruits frais, comme la pêche ou la poire",
+        "Fruits séchés ou caramel",
+        "Noix, comme la châtaigne ou l’amande",
+        "Notes terreuses, comme le bois ou les champignons",
+        "Notes fraîches et végétales, comme les herbes",
+        "Notes florales ou de miel",
+        "Doux et léger",
+        "Surprenez-moi"
+      ],
+      ""
+    ]
+  ],
+  [
+    "caffeine",
+    [
+      "How does caffeine affect you?",
+      [
+        "It usually feels fine",
+        "It can make me nervous or affect my sleep",
+        "I avoid caffeine"
+      ],
+      ""
+    ],
+    [
+      "Comment réagissez-vous à la caféine?",
+      [
+        "Je la tolère généralement bien",
+        "Elle peut me rendre nerveux ou nuire à mon sommeil",
+        "J’évite la caféine"
+      ],
+      ""
+    ]
+  ]
 ];
 
 const temperatureScores = [-3, -2, -1, 0, 1, 2, 3];
-const flavourPatterns = ['cold', 'dry', 'energy', 'heavy', 'heat', 'tension', 'balanced'];
+const flavourPatterns = ['cold', 'dry', 'dry', 'energy', 'heavy', 'heat', 'tension', 'balanced', null];
 
 const quizCopy = {
   en: {
@@ -117,13 +417,21 @@ function matchQuiz(answers) {
       addSignal('cold', Math.max(0, -temperature));
       addSignal('heat', Math.max(0, temperature));
     } else if (pattern === 'heatSkin') {
-      dampClue = answers[index] >= 2;
+      dampClue = answers[index] >= 3;
+      addSignal('dry', Math.max(0, 2 - answers[index]));
+      if (answers[index] === 4) addSignal('heat', 2);
+    } else if (pattern === 'cold') {
+      addSignal('cold', Math.max(0, 2 - answers[index]));
+      addSignal('heat', Math.max(0, answers[index] - 2));
+    } else if (index === 11) {
+      addSignal('dry', Math.max(0, 2 - answers[index]));
+      addSignal('heat', Math.max(0, answers[index] - 2));
     } else {
       addSignal(pattern, answers[index]);
     }
   });
-  const candidates = [...patterns].filter(([, [a, b]]) => a > 0 && b > 0 && a + b >= 4)
-    .map(([pattern, [a, b]]) => ({ pattern, score: a + b }))
+  const candidates = [...patterns].filter(([, values]) => values.filter(v => v > 0).length >= 2 && values.reduce((a,b)=>a+b,0) >= 4)
+    .map(([pattern, values]) => ({ pattern, score: values.reduce((a,b)=>a+b,0) }))
     .sort((a, b) => b.score - a.score);
   const mixed = candidates.length > 1 && candidates[0].score === candidates[1].score;
   return { key: !mixed && candidates.length ? candidates[0].pattern : 'balanced', mixed, dampClue };
@@ -149,8 +457,10 @@ function renderQuiz(focus = false) {
     const caffeine = quizAnswers.at(-1);
     const caution = caffeine === 2 ? copy.avoid : caffeine === 1 ? copy.sensitive : '';
     const heading = result.mixed ? copy.mixed : details.title;
+    const teaNames = {ember:'2019 Shou Pu-erh',mist:'Aged Fuding Shou Mei White Tea',stillpoint:'Ali Shan Qing Xin Green Oolong',ground:'Fengqing Dianhong Black Tea',vital:'Mi Lan Xiang Dancong Oolong',pivot:'Mengding Huangya Yellow Tea',jade:'Shifeng Longjing Green Tea'};
+    const teaType = teaNames[profile.tea] || profile.name;
     const clues = bodyQuestions.flatMap(([pattern, en, fr], questionIndex) =>
-      pattern === result.key && quizAnswers[questionIndex] > 0 ? [(lang === 'fr' ? fr : en)[2]] : []
+      pattern === result.key && quizAnswers[questionIndex] > 0 && (lang === 'fr' ? fr : en)[2] ? [(lang === 'fr' ? fr : en)[2]] : []
     );
     if (result.key === 'heat') clues.unshift(copy.warmClue);
     if (result.key === 'cold') clues.unshift(copy.coldClue);
@@ -158,13 +468,13 @@ function renderQuiz(focus = false) {
     const flavour = flavourPatterns[flavourIndex];
     quizPanel.innerHTML = `
       <div class="eyebrow">${copy.result}</div>
-      <h3 tabindex="-1">${heading}</h3>
+      <div class="quiz-result-heading"><div><span class="quiz-result-label">${lang === "fr" ? "VOTRE PROFIL INSPIRÉ DE LA MTC" : "YOUR TCM-INSPIRED BODY PATTERN"}</span><h3 tabindex="-1">${heading}</h3></div><div class="quiz-result-icon" aria-hidden="true">茶</div></div>
       ${result.mixed ? '' : `<div class="meta">${details.term}</div>`}
       <p>${result.mixed ? copy.mixedSummary : details.summary}</p>
       ${clues.length ? `<p class="quiz-clues"><b>${copy.clues}</b> · ${new Intl.ListFormat(lang).format(clues)}.</p>` : ''}
       <div class="quiz-match">
         <img src="/images/${profile.tea}-hero.webp" alt="" width="1536" height="1024">
-        <div><strong>${profile.name}</strong>
+        <div><div class="quiz-tea-kicker">${lang === "fr" ? "VOTRE THÉ RECOMMANDÉ" : "YOUR RECOMMENDED TEA"}</div><strong>${profile.name}</strong><h4 class="quiz-real-tea">${teaType}</h4>
         <p><b>${copy.fit}</b> · ${details.fit}</p>
         <p><b>${copy.taste}</b> · ${details.taste}</p>
         ${flavour ? `<p><b>${copy.picked}</b> · ${bodyQuestions.at(-2)[index][1][flavourIndex]}. ${flavour === result.key ? copy.tasteMatch : copy.tasteOther}</p>` : ''}</div>
@@ -175,7 +485,7 @@ function renderQuiz(focus = false) {
       </div>
       ${caution ? `<p class="quiz-caution">${caution}</p>` : ''}
       <div class="quiz-actions">
-        <a class="cta" href="/tea.html?tea=${profile.tea}">${copy.choice} ${profile.name} ↗</a>
+        <a class="cta" href="/tea.html?tea=${profile.tea}">${lang === 'fr' ? 'Voir le thé' : 'View tea details'} · ${teaType} ↗</a>
         ${caffeine === 2 ? '' : `<button class="quiz-buy" type="button" data-add="${profile.tea}">${t('add')}</button>`}
       </div>
       <details class="quiz-report">
